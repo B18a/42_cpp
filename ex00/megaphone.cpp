@@ -10,19 +10,26 @@ int	is_lower_case(char c)
 int	main(int argc, char **argv)
 {
 	int	i;
+	int	j;
 	char c;
 
 	i = 0;
-	if (argc == 2)
+	j = 1;
+	if (argc >= 2)
 	{
-		while(argv[1][i])
+		while(argv[j])
 		{
-			if(is_lower_case(argv[1][i]))
-				c = argv[1][i] - 32;
-			else
-				c = argv[1][i];
-			std::cout << c;
-			i++;
+			while(argv[j][i])
+			{
+				if(is_lower_case(argv[j][i]))
+					c = argv[j][i] - 32;
+				else
+					c = argv[j][i];
+				std::cout << c;
+				i++;
+			}
+			i = 0;
+			j++;
 		}
 		std::cout << std::endl;
 	}
