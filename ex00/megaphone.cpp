@@ -13,12 +13,12 @@ int	main(int argc, char **argv)
 	int	j;
 	char c;
 
-	i = 0;
-	j = 1;
 	if (argc >= 2)
 	{
+		j = 1;
 		while(argv[j])
 		{
+			i = 0;
 			while(argv[j][i])
 			{
 				if(is_lower_case(argv[j][i]))
@@ -28,7 +28,6 @@ int	main(int argc, char **argv)
 				std::cout << c;
 				i++;
 			}
-			i = 0;
 			j++;
 		}
 		std::cout << std::endl;
