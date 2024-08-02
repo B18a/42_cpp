@@ -1,13 +1,13 @@
-#include"Contact.hpp"
 
-Contact::Contact(void)
-{
-	std::cout << "Constructer Contact called" << std::endl;
-	return ;
-}
 
-Contact::~Contact(void)
+#ifndef CONTACT_H
+ # define CONTACT_H
+
+class Contact
 {
-	std::cout << "Destructer Contact called" << std::endl;
-	return ;
-}
+	public:
+		Contact(void);
+		~Contact(void);
+};
+
+#endif

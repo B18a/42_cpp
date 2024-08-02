@@ -1,11 +1,15 @@
-#ifndef PHONEBOOK_H
- # define PHONEBOOK_H
+#include"Phonebook.hpp"
+#include <iostream>
 
-class PHONEBOOK
+
+Phonebook::Phonebook(void)
 {
-public:
-	Phonebook(void);
-	~Phonebook(void);
-};
+	std::cout << "Constructer Phonebook called" << std::endl;
+	return ;
+}
 
-#endif
+Phonebook::~Phonebook(void)
+{
+	std::cout << "Destructer Phonebook called" << std::endl;
+	return ;
+}

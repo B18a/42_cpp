@@ -1,11 +1,19 @@
-#ifndef CONTACT_H
- # define CONTACT_H
+#include"Contact.hpp"
+#include <iostream>
 
-class Contact
+
+
+Contact::Contact(void)
 {
-public:
-	Contact(void);
-	~Contact(void);
-};
+	std::cout << "Constructer Contact called" << std::endl;
+	return ;
+}
 
-#endif
+Contact::~Contact(void)
+{
+	std::cout << "Destructer Contact called" << std::endl;
+	return ;
+}
+
+
+

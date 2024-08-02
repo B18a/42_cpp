@@ -1,13 +1,14 @@
-#include"Phonebook.hpp"
 
-Phonebook::Phonebook(void)
-{
-	std::cout << "Constructer Phonebook called" << std::endl;
-	return ;
-}
 
-Phonebook::~Phonebook(void)
+#ifndef PHONEBOOK_H
+ # define PHONEBOOK_H
+
+class Phonebook
 {
-	std::cout << "Destructer Phonebook called" << std::endl;
-	return ;
-}
+	public:
+		Phonebook(void);
+		~Phonebook(void);
+};
+
+#endif
+
