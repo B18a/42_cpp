@@ -2,7 +2,7 @@
 #include"PhoneBook.hpp"
 #include <iostream>
 
-#include <unistd.h> 
+#include <unistd.h>
 #include <chrono> //time
 #include <thread>
 
@@ -17,7 +17,7 @@ int main (void)
 	{
 		std::cout<<"Enter a Command : [SEARCH] [ADD] [EXIT]" << std::endl;
 
-		std::getline(std::cin, input);	
+		std::getline(std::cin, input);
 
 
 
