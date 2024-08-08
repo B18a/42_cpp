@@ -5,13 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/07 14:12:40 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/07 14:18:34 by ajehle           ###   ########.fr        #
+#    Created: 2024/08/08 09:57:42 by ajehle            #+#    #+#              #
+#    Updated: 2024/08/08 09:57:43 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+
 CXX			= g++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic -std=c++98
 NAME		= megaphone
 OBJ_DIR		= obj
 SRC_DIR		= src
@@ -44,7 +45,6 @@ clean :
 
 fclean : clean
 	$(REMOVE) $(NAME)
-#	$(REMOVE) $(OBJ_DIR)
 
 re : fclean all
 

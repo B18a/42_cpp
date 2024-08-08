@@ -1,20 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/08 12:17:29 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/08 18:24:32 by ajehle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#ifndef CONTACT_HPP
+ # define CONTACT_HPP
 
-#ifndef CONTACT_H
- # define CONTACT_H
+#include <iostream>
 
 class Contact
 {
-	public:
-		Contact(void);
-		~Contact(void);
+private:
+	std::string first_name;
+	std::string last_name;
+	std::string nick_name;
+	std::string number;
+	std::string secret;
+public:
+	Contact(void);
+	~Contact(void);
 
-		int		index;
-		char*	first_name;
-		char*	last_name;
-		char*	nick_name;
-		int		number;
-		char*	secret;
+	void setContact(std::string new_first_name, std::string new_last_name, std::string new_nick_name, std::string new_number, std::string new_secret);
+	std::string getFirstName(void);
+	std::string getLastName(void);
+	std::string getNickName(void);
+
+	void	printContact(void);
 };
 
 #endif
