@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 10:00:08 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/08 10:00:11 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/09 10:31:49 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,5 @@ int	main(int argc, char **argv)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	return(0);
 }
+
+// std::cout << toupper(argv[j][i]);

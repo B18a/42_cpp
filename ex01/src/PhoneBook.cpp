@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:53:50 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/08 18:24:48 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/09 10:44:49 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,12 @@ PhoneBook::~PhoneBook(void)
 	// std::cout << "Destructer PhoneBook called" << std::endl;
 }
 
-
+std::string truncate(const std::string name)
+{
+	if (name.length() > 10)
+		return name.substr(0, 9) + ".";
+	return name;
+}
 
 void PhoneBook::search(void)
 {
@@ -33,10 +38,18 @@ void PhoneBook::search(void)
 	int	num = 0;
 
 	std::string index;
-	std::cout << std::setw(10) << std::right << "  INDEX |" << "FIRST NAME |" << "LAST NAME |" << "NICKNAME " << std::endl;
+	std::cout	<< std::setw(10)  << "INDEX" << "|"
+				<< std::setw(10) << "FIRST NAME" << "|"
+				<< std::setw(10) << "LAST NAME" << "|"
+				<< std::setw(10) << "NICKNAME" << "|"
+				<< std::endl;
 	while (i < MAX_INDEX)
 	{
-		std::cout << i << this->contacs[i].getFirstName() << this->contacs[i].getLastName() << this->contacs[i].getNickName() << std::endl;
+		std::cout	<< std::setw(10) << i << "|"
+					<< std::setw(10) << truncate(this->contacs[i].getFirstName()) << "|"
+					<< std::setw(10) << truncate(this->contacs[i].getLastName()) << "|"
+					<< std::setw(10) << truncate(this->contacs[i].getNickName()) << "|"
+					<< std::endl;
 		i++;
 	}
 	index = get_input_safe("ENTER INDEX NUMBER:");
@@ -56,7 +69,12 @@ void PhoneBook::search(void)
 	}
 	this->contacs[num].printContact();
 
+
 }
+
+
+// << std::right
+
 
 std::string PhoneBook::get_input_safe(std::string message)
 {
@@ -86,4 +104,18 @@ int PhoneBook::add(void)
 		number, secret);
 	this->index++;
 	return (0);
+}
+
+
+void	PhoneBook::add_test(void)
+{
+	contacs[0].setContact("Johnathan", "Doe", "Johnny", "123-456-7890", "Loves chocolate.");
+	contacs[1].setContact("Alice", "Smith", "Ally", "987-654-3210", "Afraid of heights.");
+	contacs[2].setContact("Bob", "Brown", "Bobby", "555-555-5555", "Secretly a gamer.");
+	contacs[3].setContact("Catherine", "Johnson", "Cat", "111-222-3333", "Has a twin.");
+	contacs[4].setContact("Michael", "Davis", "Mike", "444-444-4444", "Writes poetry.");
+	contacs[5].setContact("Emily", "Miller", "Em", "222-333-4444", "Allergic to cats.");
+	contacs[6].setContact("David", "Wilson", "Dave", "333-222-1111", "Plays the guitar.");
+	contacs[7].setContact("Sophia", "Taylor", "Sophie", "666-777-8888", "Collects stamps.");
+
 }

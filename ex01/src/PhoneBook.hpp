@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:53:43 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/08 18:22:52 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/09 10:42:20 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class PhoneBook
 	std::string get_input_safe(std::string message);
 	void search(void);
 	int add(void);
+	void add_test(void);
 };
 
 #endif

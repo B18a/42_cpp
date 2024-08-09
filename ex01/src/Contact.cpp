@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 12:17:33 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/08 14:52:17 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/09 10:45:57 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,21 @@ Contact::~Contact(void)
 {
 	// std::cout << "Destructer Contact called" << std::endl;
 }
+
+
+// PARAMETERIZED CONSTRUCTOR
+Contact::Contact(std::string first_name, std::string last_name, std::string nick_name, std::string number, std::string secret)
+{
+	this->first_name = first_name;
+	this->last_name = last_name;
+	this->nick_name = nick_name;
+	this->number = number;
+	this->secret = secret;
+}
+
+// Contact::Contact(std::string first_name, std::string last_name, std::string nick_name, std::string number, std::string secret)
+// : first_name(first_name), last_name(last_name), nick_name(nick_name), number(number), secret(secret) {}
+
 
 std::string	Contact::getFirstName(void)
 {
