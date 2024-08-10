@@ -1,7 +1,7 @@
 
 
 CXX			= g++
-#CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
+CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
 NAME		= zombie
 OBJ_DIR		= obj
 SRC_DIR		= src
