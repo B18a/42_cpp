@@ -4,12 +4,12 @@
 
 int	main(int argc, char **argv)
 {
-		Harl	test;
+		Harl	harl;
 
-		test.complain("INFO");
-		test.complain("DEBUG");
-		test.complain("ERROR");
-		test.complain("WARNING");
+		harl.complain("INFO");
+		harl.complain("DEBUG");
+		harl.complain("ERROR");
+		harl.complain("WARNING");
 
 
 
