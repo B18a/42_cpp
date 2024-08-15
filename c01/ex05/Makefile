@@ -2,7 +2,7 @@
 
 CXX			= g++
 #CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
-NAME		= strings
+NAME		= harl
 OBJ_DIR		= obj
 SRC_DIR		= src
 INC_DIR		= include
@@ -11,8 +11,8 @@ REMOVE		= rm -rf
 
 # INTERNAL FUNCTIONS
 FUNCTIONS	=	$(SRC_DIR)/main.cpp \
-#				$(SRC_DIR)/Weapon.cpp \
-				
+				$(SRC_DIR)/Harl.cpp
+
 
 # INTERNAL OBJECT
 OBJECTS		= $(addprefix $(OBJ_DIR)/, $(notdir $(FUNCTIONS:.cpp=.o)))

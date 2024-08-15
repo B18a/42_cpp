@@ -1,9 +1,19 @@
 #include"HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : 
+HumanA::HumanA(std::string name, Weapon &weapon) :
 _name(name), _weapon(weapon){}
 
-HumanA::~HumanA(void){}
+// does not work like that beacuse references must be initialized at declaration
+// HumanA::HumanA(std::string name, Weapon &weapon)
+// {
+// 	this->_weapon = weapon;
+// 	this->_name = name;
+// }
+
+HumanA::~HumanA(void)
+{
+
+}
 
 void	HumanA::attack(void)
 {
