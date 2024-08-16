@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:01:30 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/16 21:37:55 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,17 @@
 # include <iostream>
 #include "ScavTrap.hpp"
 
-class FragTrap : public ScavTrap
+class FragTrap : public ClapTrap
 {
   public:
+	FragTrap(void);
 	FragTrap(std::string name);
 	FragTrap(const FragTrap &cpy);				// copy constuctor
 	FragTrap &operator=(const FragTrap &cpy);	// copy assignment operator
 	~FragTrap(void);
 
 	void highFivesGuys(void);
+
   private:
 
 };

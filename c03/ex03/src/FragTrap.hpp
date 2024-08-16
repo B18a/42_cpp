@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 13:55:27 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 13:55:31 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/16 21:39:37 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-HumanB::HumanB(std::string name) : _name(name)
-{
-}
 
-HumanB::~HumanB(void)
-{
-}
+# include <iostream>
+#include "ScavTrap.hpp"
 
-void HumanB::attack(void)
+class FragTrap : public ClapTrap
 {
-	if (this->_weapon)
-	{
-		std::cout << this->_name << " attacks with their " << (this->_weapon)->getType() << std::endl;
-	}
-	else
-	{
-		std::cout << this->_name << " hast no weapon " << std::endl;
-	}
-}
+  public:
+	FragTrap(void);
+	FragTrap(std::string name);
+	FragTrap(const FragTrap &cpy);				// copy constuctor
+	FragTrap &operator=(const FragTrap &cpy);	// copy assignment operator
+	~FragTrap(void);
 
-void HumanB::setWeapon(Weapon &weapon)
-{
-	this->_weapon = &weapon;
-}
+	void highFivesGuys(void);
+
+  private:
+
+};
+
+#endif

@@ -6,7 +6,7 @@
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/08 11:29:33 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/16 10:29:50 by ajehle           ###   ########.fr        #
+#    Updated: 2024/08/16 13:12:41 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC_DIR		= src
 
 # COMPILER AND FLAG
 CXX			= g++
-CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
 
 # NAME
 NAME		= phonebook

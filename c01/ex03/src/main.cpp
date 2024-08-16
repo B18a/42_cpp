@@ -1,11 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/16 13:55:43 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/16 13:55:46 by ajehle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include<iostream>
-#include"HumanA.hpp"
-#include"HumanB.hpp"
-#include"Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
+#include <iostream>
 
-
-int main(void)
+int	main(void)
 /*
 {
 	Weapon club = Weapon("crude spiked club");
@@ -23,7 +33,4 @@ int main(void)
 	jim.attack();
 	club.setType("some other type of club");
 	jim.attack();
-
-
 }
-

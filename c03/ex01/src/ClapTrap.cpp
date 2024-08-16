@@ -6,13 +6,18 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 20:46:04 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/16 21:40:11 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 // CONSTRUCTORS
+
+ClapTrap::ClapTrap(void)
+{
+	std::cout << "ClapTrap " << "Constructor for " << "DEFAULT" << " called" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name) :_name(name), _health(10), _energy(10), _damage(0)
 {

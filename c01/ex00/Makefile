@@ -1,13 +1,22 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/08/16 13:53:46 by ajehle            #+#    #+#              #
+#    Updated: 2024/08/16 13:53:52 by ajehle           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-
-CXX			= g++
+ÍCXX			= g++
 CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
 NAME		= zombie
 OBJ_DIR		= obj
 SRC_DIR		= src
 INC_DIR		= include
 REMOVE		= rm -rf
-
 
 # INTERNAL FUNCTIONS
 FUNCTIONS	=	$(SRC_DIR)/main.cpp \

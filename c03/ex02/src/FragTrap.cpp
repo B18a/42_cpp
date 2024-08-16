@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:08:37 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/16 21:38:21 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 // CONSTRUCTORS
 
-FragTrap::FragTrap(std::string name) : ScavTrap(name)
+FragTrap::FragTrap(void)
+{
+	std::cout << "FragTrap " << "Constructor for " << "DEFAULT" << " called" << std::endl;
+}
+
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "FragTrap " << "Constructor for " << this->_name << " called" << std::endl;
 	this->_health = 100;
@@ -23,7 +28,7 @@ FragTrap::FragTrap(std::string name) : ScavTrap(name)
 }
 
 // copy constuctor
-FragTrap::FragTrap(const FragTrap &cpy) : ScavTrap(cpy)
+FragTrap::FragTrap(const FragTrap &cpy) : ClapTrap(cpy)
 {
 	std::cout << "FragTrap " << "Copy constructor called" << std::endl;
 	this->_health = cpy._health;

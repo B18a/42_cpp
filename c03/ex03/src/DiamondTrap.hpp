@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:36:39 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/16 21:39:21 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
 # include <iostream>
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
   public:
-	ScavTrap(void);
-	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap &cpy);				// copy constuctor
-	ScavTrap &operator=(const ScavTrap &cpy);	// copy assignment operator
-	~ScavTrap(void);
-
-	void guardGate();
+	DiamondTrap(void);
+	DiamondTrap(std::string name);
+	DiamondTrap(const DiamondTrap &cpy);				// copy constuctor
+	DiamondTrap &operator=(const DiamondTrap &cpy);	// copy assignment operator
+	~DiamondTrap(void);
 
   private:
-
+	std::string _name;
 };
 
 #endif

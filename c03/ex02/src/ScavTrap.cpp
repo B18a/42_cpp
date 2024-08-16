@@ -6,13 +6,18 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 20:47:15 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/16 21:36:30 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 // CONSTRUCTORS
+
+ScavTrap::ScavTrap(void)
+{
+	std::cout << "ScavTrap " << "Constructor for " << "DEFAULT" << " called" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {

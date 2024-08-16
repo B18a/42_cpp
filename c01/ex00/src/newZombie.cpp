@@ -1,18 +1,18 @@
-#include"Zombie.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/16 13:51:06 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/16 13:51:17 by ajehle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// Zombie *Zombie::newZombie( std::string name )
-// {
-// 	Zombie	*person;
+#include "Zombie.hpp"
 
-// 	person = new Zombie;
-// 	person->name = name;
-// 	person->announce();
-// 	return person;
-
-// }
-
-
-Zombie* newZombie( std::string name )
-{	
+Zombie	*newZombie(std::string name)
+{
 	return (new Zombie(name));
 }

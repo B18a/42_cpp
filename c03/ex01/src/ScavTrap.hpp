@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 20:21:47 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/16 21:40:28 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class ScavTrap : public ClapTrap
 {
   public:
+	ScavTrap(void);
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap &cpy);				// copy constuctor
 	ScavTrap &operator=(const ScavTrap &cpy);	// copy assignment operator

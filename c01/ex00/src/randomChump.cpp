@@ -1,7 +1,18 @@
-#include"Zombie.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/16 13:51:22 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/16 13:51:25 by ajehle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "Zombie.hpp"
 
-void randomChump( std::string name )
+void	randomChump(std::string name)
 {
 	Zombie random(name);
 }

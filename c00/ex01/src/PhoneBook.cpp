@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:53:50 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 13:08:56 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/16 13:17:35 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,17 @@ void PhoneBook::search(void)
 	{
 		num = std::stoi(index);
 	}
-	catch (const std::invalid_argument)
+	catch (const std::invalid_argument& e)
 	{
-		std::cout << "Invalid argument: " << std::endl;
+		std::cout << "Invalid argument: " << e.what() << std::endl;
 		return ;
 	}
-	catch (const std::out_of_range)
+	catch (const std::out_of_range& e)
 	{
-		std::cout << "Out of range: " << std::endl;
+		std::cout << "Out of range: " << e.what() << std::endl;
 		return ;
 	}
-	if(num < 0 | num >= MAX_INDEX)
+	if(num < 0 || num >= MAX_INDEX)
 	{
 		std::cout << "Invalid argument: " << std::endl;
 		return ;

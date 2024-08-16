@@ -5,23 +5,26 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/16 13:53:37 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/16 13:53:56 by ajehle           ###   ########.fr        #
+#    Created: 2024/08/16 19:44:08 by ajehle            #+#    #+#              #
+#    Updated: 2024/08/16 21:25:54 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+
 CXX			= g++
-CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
-NAME		= zombieHorde
+CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic -std=c++98
+NAME		= diamondtrap
 OBJ_DIR		= obj
 SRC_DIR		= src
 INC_DIR		= include
 REMOVE		= rm -rf
 
+
 # INTERNAL FUNCTIONS
 FUNCTIONS	=	$(SRC_DIR)/main.cpp \
-				$(SRC_DIR)/Zombie.cpp \
-				$(SRC_DIR)/zombieHorde.cpp
+				$(SRC_DIR)/ClapTrap.cpp \
+				$(SRC_DIR)/ScavTrap.cpp \
+				$(SRC_DIR)/FragTrap.cpp \
 
 # INTERNAL OBJECT
 OBJECTS		= $(addprefix $(OBJ_DIR)/, $(notdir $(FUNCTIONS:.cpp=.o)))

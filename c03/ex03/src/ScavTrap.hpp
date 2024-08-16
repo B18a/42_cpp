@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 13:55:27 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 13:55:31 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/16 21:37:16 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-HumanB::HumanB(std::string name) : _name(name)
-{
-}
+# include <iostream>
+#include "ClapTrap.hpp"
 
-HumanB::~HumanB(void)
+class ScavTrap : public ClapTrap
 {
-}
+  public:
+	ScavTrap(void);
+	ScavTrap(std::string name);
+	ScavTrap(const ScavTrap &cpy);				// copy constuctor
+	ScavTrap &operator=(const ScavTrap &cpy);	// copy assignment operator
+	~ScavTrap(void);
 
-void HumanB::attack(void)
-{
-	if (this->_weapon)
-	{
-		std::cout << this->_name << " attacks with their " << (this->_weapon)->getType() << std::endl;
-	}
-	else
-	{
-		std::cout << this->_name << " hast no weapon " << std::endl;
-	}
-}
+	void guardGate();
 
-void HumanB::setWeapon(Weapon &weapon)
-{
-	this->_weapon = &weapon;
-}
+  private:
+
+};
+
+#endif

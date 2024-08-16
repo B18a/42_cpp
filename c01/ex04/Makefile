@@ -1,7 +1,7 @@
 
 
 CXX			= g++
-#CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
+CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic -std=c++98
 NAME		= strings
 OBJ_DIR		= obj
 SRC_DIR		= src
