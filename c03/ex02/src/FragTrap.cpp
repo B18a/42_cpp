@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 20:47:15 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/16 21:08:37 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 // CONSTRUCTORS
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name) : ScavTrap(name)
 {
-	std::cout << "ScavTrap " << "Constructor for " << this->_name << " called" << std::endl;
+	std::cout << "FragTrap " << "Constructor for " << this->_name << " called" << std::endl;
 	this->_health = 100;
-	this->_energy = 50;
-	this->_damage = 20;
+	this->_energy = 100;
+	this->_damage = 30;
 }
 
 // copy constuctor
-ScavTrap::ScavTrap(const ScavTrap &cpy) : ClapTrap(cpy)
+FragTrap::FragTrap(const FragTrap &cpy) : ScavTrap(cpy)
 {
-	std::cout << "ScavTrap " << "Copy constructor called" << std::endl;
+	std::cout << "FragTrap " << "Copy constructor called" << std::endl;
 	this->_health = cpy._health;
 	this->_energy = cpy._energy;
 	this->_damage = cpy._damage;
 }
 
 // copy assignment operator
-ScavTrap &ScavTrap::operator=(const ScavTrap &cpy)
+FragTrap &FragTrap::operator=(const FragTrap &cpy)
 {
-	std::cout << "ScavTrap " << "Copy assignment constructor called" << std::endl;
+	std::cout << "FragTrap " << "Copy assignment constructor called" << std::endl;
 	this->_name = cpy._name;
 	this->_health = cpy._health;
 	this->_energy = cpy._energy;
@@ -42,14 +42,14 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &cpy)
 	return (*this);
 }
 
-ScavTrap::~ScavTrap(void)
+FragTrap::~FragTrap(void)
 {
-	std::cout << "ScavTrap " << "Destructor for " << this->_name << " called" << std::endl;
+	std::cout << "FragTrap " << "Destructor for " << this->_name << " called" << std::endl;
 }
 
 // MEMBER FUNCTIONS
 
-void ScavTrap::guardGate(void)
+void FragTrap::highFivesGuys(void)
 {
-	std::cout << "ScavTrap "<< this->_name << "is now in Gatekeeper mode" << std::endl;
+	std::cout << "FragTrap " << this->_name << " gives a HIGH FIVE to everyone in the room" << std::endl;
 }

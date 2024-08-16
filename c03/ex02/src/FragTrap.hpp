@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 19:54:16 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/16 21:01:30 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
 
 # include <iostream>
+#include "ScavTrap.hpp"
 
-class ClapTrap
+class FragTrap : public ScavTrap
 {
   public:
-	ClapTrap(std::string name);
-	ClapTrap(const ClapTrap &cpy);				// copy constuctor
-	ClapTrap &operator=(const ClapTrap &cpy);	// copy assignment operator
-	~ClapTrap(void);
+	FragTrap(std::string name);
+	FragTrap(const FragTrap &cpy);				// copy constuctor
+	FragTrap &operator=(const FragTrap &cpy);	// copy assignment operator
+	~FragTrap(void);
 
-	// member functions
-	void attack(const std::string &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-
+	void highFivesGuys(void);
   private:
-	std::string _name;
-	unsigned int _health;
-	unsigned int _energy;
-	unsigned int _damage;
+
 };
 
 #endif

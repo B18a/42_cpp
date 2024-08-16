@@ -10,10 +10,10 @@
 
 int main( void )
 {
-	// ClapTrap batman("Batman");
+	ClapTrap batman("Batman");
 	ScavTrap superman("Superman");
 
-	// batman.attack("Superman");
+	superman.guardGate();
 
 	return 0;
 }
