@@ -6,7 +6,7 @@
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 19:44:08 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/16 21:25:54 by ajehle           ###   ########.fr        #
+#    Updated: 2024/08/16 21:46:18 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ FUNCTIONS	=	$(SRC_DIR)/main.cpp \
 				$(SRC_DIR)/ClapTrap.cpp \
 				$(SRC_DIR)/ScavTrap.cpp \
 				$(SRC_DIR)/FragTrap.cpp \
+				$(SRC_DIR)/DiamondTrap.cpp \
 
 # INTERNAL OBJECT
 OBJECTS		= $(addprefix $(OBJ_DIR)/, $(notdir $(FUNCTIONS:.cpp=.o)))
