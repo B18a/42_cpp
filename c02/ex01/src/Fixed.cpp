@@ -11,18 +11,17 @@ Fixed::Fixed(void) : _fixed_nbr(0)
 	std::cout<<"Default constructor called"<<std::endl;
 }
 
-
-Fixed::Fixed(const Fixed& other)
+Fixed::Fixed(const Fixed& cpy)
 {
 	std::cout<<"Copy constructor called"<<std::endl;
-	*this = other;
+	*this = cpy;
 }
 
-Fixed& Fixed::operator=(const Fixed& other)
+Fixed& Fixed::operator=(const Fixed& cpy)
 {
 	std::cout<<"Copy assignment operator called"<<std::endl;
-	if(this != &other)
-		this->_fixed_nbr = other.getRawBits();
+	if(this != &cpy)
+		this->_fixed_nbr = cpy.getRawBits();
 	return *this;
 }
 
@@ -69,5 +68,7 @@ int Fixed::toInt( void ) const
 std::ostream &operator<<(std::ostream &output, const Fixed &nbr)
 {
 	output << nbr.toFloat();
+	// output << " ";
+	// output << nbr.toInt();
 	return output;
 }

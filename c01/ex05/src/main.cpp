@@ -11,9 +11,5 @@ int	main(int argc, char **argv)
 		harl.complain("ERROR");
 		harl.complain("WARNING");
 
-
-
-
-
 		return (0);
 }

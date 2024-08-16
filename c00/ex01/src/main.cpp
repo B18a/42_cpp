@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:53:38 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/09 10:47:39 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/16 11:27:56 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main (void)
 	std::string input;
 	PhoneBook book;
 
-	book.add_test();
+	// book.add_test();
 
 	while(1)
 	{
@@ -31,12 +31,10 @@ int main (void)
 		}
 		else if(input == "ADD")
 		{
-			if(book.add())
-				return(0);
+			book.add();
 		}
 		else if(input == "EXIT")
 		{
-			std::cout<<"Byebye" << std::endl;
 			return(0);
 		}
 		else

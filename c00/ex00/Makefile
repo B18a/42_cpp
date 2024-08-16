@@ -6,7 +6,7 @@
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/08 09:57:42 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/08 09:57:43 by ajehle           ###   ########.fr        #
+#    Updated: 2024/08/16 10:29:52 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ OBJ_DIR		= obj
 SRC_DIR		= src
 INC_DIR		= include
 REMOVE		= rm -rf
-
 
 # INTERNAL FUNCTIONS
 FUNCTIONS	=	$(SRC_DIR)/megaphone.cpp

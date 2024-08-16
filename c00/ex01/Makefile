@@ -6,7 +6,7 @@
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/08 11:29:33 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/08 17:41:23 by ajehle           ###   ########.fr        #
+#    Updated: 2024/08/16 10:29:50 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ REMOVE		= rm -rf
 FUNCTIONS	=	main.cpp \
 				PhoneBook.cpp \
 				Contact.cpp
-
 
 # SOURCE FILES
 SRC_FILES   = $(addprefix $(SRC_DIR)/, $(FUNCTIONS))

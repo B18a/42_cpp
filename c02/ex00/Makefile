@@ -2,7 +2,7 @@
 
 CXX			= g++
 CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
-NAME		= first_OCCF
+NAME		= fixed_nbr
 OBJ_DIR		= obj
 SRC_DIR		= src
 INC_DIR		= include

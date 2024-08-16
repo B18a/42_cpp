@@ -6,7 +6,7 @@
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/09 10:48:57 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/09 13:28:07 by ajehle           ###   ########.fr        #
+#    Updated: 2024/08/16 10:44:04 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC_DIR		= src
 
 # COMPILER AND FLAG
 CXX			= g++
-#CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic -std=c++98
 
 # NAME
 NAME		= account
@@ -27,7 +27,6 @@ REMOVE		= rm -rf
 # INTERNAL FUNCTIONS
 FUNCTIONS	=	Account.cpp \
 				tests.cpp
-
 
 # SOURCE FILES
 SRC_FILES   = $(addprefix $(SRC_DIR)/, $(FUNCTIONS))

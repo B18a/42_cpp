@@ -14,9 +14,9 @@ class Fixed
 	// default constructor
 		Fixed(void);
 	// copy constuctor
-		Fixed(const Fixed& other);
+		Fixed(const Fixed& cpy);
 	// copy assignment operator
-		Fixed& operator=(const Fixed& other);
+		Fixed& operator=(const Fixed& cpy);
 	// destructor
 		~Fixed(void);
 
@@ -25,8 +25,8 @@ class Fixed
 	void setRawBits( int const raw );
 
 	private:
-		int					fixed_nbr;
-		static const int	bits = 8;
+		int					_fixed_nbr;
+		static const int	_bits = 8;
 };
 
 

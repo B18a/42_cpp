@@ -6,34 +6,28 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 10:00:08 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/09 10:31:49 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/16 10:56:39 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cctype>
 #include <iostream>
-
-int	is_lower_case(char c)
-{
-	if(c >= 'a' && c <= 'z')
-		return(1);
-	return(0);
-}
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	int	j;
-	char c;
+	int		i;
+	int		j;
+	char	c;
 
 	if (argc >= 2)
 	{
 		j = 1;
-		while(argv[j])
+		while (argv[j])
 		{
 			i = 0;
-			while(argv[j][i])
+			while (argv[j][i])
 			{
-				if(is_lower_case(argv[j][i]))
+				if (islower(argv[j][i]))
 					c = argv[j][i] - 32;
 				else
 					c = argv[j][i];
@@ -46,7 +40,5 @@ int	main(int argc, char **argv)
 	}
 	else
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	return(0);
+	return (0);
 }
-
-// std::cout << toupper(argv[j][i]);

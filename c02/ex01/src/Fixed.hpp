@@ -15,14 +15,14 @@ class Fixed
 		Fixed(void);
 		Fixed(const int nbr);
 		Fixed(const float nbr);
-		Fixed(const Fixed& other);
+		Fixed(const Fixed& cpy);
 		~Fixed(void);
 
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 		float toFloat( void ) const;
 		int toInt( void ) const;
-		Fixed& operator=(const Fixed& other);
+		Fixed& operator=(const Fixed& cpy);
 
 	private:
 		int					_fixed_nbr;
