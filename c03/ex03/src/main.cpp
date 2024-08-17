@@ -3,10 +3,12 @@
 
 
 
-#include"ClapTrap.hpp"
-#include"ScavTrap.hpp"
-#include"FragTrap.hpp"
-#include"DiamondTrap.hpp"
+#include"../include/ClapTrap.hpp"
+#include"../include/ScavTrap.hpp"
+#include"../include/FragTrap.hpp"
+#include"../include/DiamondTrap.hpp"
+#include"../include/Colors.hpp"
+
 
 #include <iostream>
 
@@ -20,6 +22,7 @@ int main( void )
 	// joker.highFivesGuys();
 
 	harley.ScavTrap::attack("Joker");
+	harley.whoAmI();
 
 	return 0;
 }

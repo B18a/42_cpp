@@ -6,28 +6,40 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:39:05 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/17 10:47:49 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "../include/ClapTrap.hpp"
+#include"../include/Colors.hpp"
 
-// CONSTRUCTORS
+/****************************************************/
+/*				CONSTRUCTORS						*/
+/****************************************************/
 
 ClapTrap::ClapTrap(void)
 {
-	std::cout << "ClapTrap " << "Constructor for " << "DEFAULT" << " called" << std::endl;
+	std::cout << "ClapTrap "
+				<< "Constructor for "
+				<< "DEFAULT"
+				<< " called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) :_name(name), _health(10), _energy(10), _damage(0)
+ClapTrap::ClapTrap(std::string name) :
+	_name(name),
+	_health(10),
+	_energy(10),
+	_damage(0)
 {
-	std::cout << "ClapTrap " << "Constructor for " << this->_name << " called" << std::endl;
+	std::cout << "ClapTrap "
+				<< "Constructor for " << this->_name << " called" << std::endl;
 }
 
 // copy constuctor
 ClapTrap::ClapTrap(const ClapTrap &cpy)
 {
-	std::cout << "ClapTrap " << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap "
+				<< "Copy constructor called" << std::endl;
 	*this = cpy;
 }
 
@@ -44,18 +56,17 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &cpy)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap " << "Destructor for " << this->_name << " called" << std::endl;
+	std::cout << "ClapTrap "
+				<< "Destructor for " << this->_name << " called" << std::endl;
 }
 
-
-// MEMBER FUNCTIONS
+/****************************************************/
+/*				MEMBER FUNCTIONS					*/
+/****************************************************/
 
 void ClapTrap::attack(const std::string &target)
 {
-	std::cout << "ClapTrap " << this->_name
-	<< " attacks " << target << ", causing "
-	<< this->_damage << " points of damage!"
-	<< std::endl;
+	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_damage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)

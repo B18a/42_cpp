@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 22:02:41 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/17 10:35:52 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 	DiamondTrap &operator=(const DiamondTrap &cpy);		// copy assignment operator
 	~DiamondTrap(void);
 
+	void whoAmI();
   private:
 	std::string _name;
 
@@ -34,8 +35,12 @@ class DiamondTrap : public ScavTrap, public FragTrap
 
 #endif
 
+
+/****************************************************/
+/*				THE DIAMOND PROBLEM					*/
+/****************************************************/
 /*
-the diamond problem:
+
 	A   A
 	|   |
 	B   C

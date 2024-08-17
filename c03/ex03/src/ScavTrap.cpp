@@ -6,13 +6,16 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:37:04 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/17 10:47:57 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "../include/ScavTrap.hpp"
+#include "../include/Colors.hpp"
 
-// CONSTRUCTORS
+/****************************************************/
+/*				CONSTRUCTORS						*/
+/****************************************************/
 
 ScavTrap::ScavTrap(void)
 {
@@ -52,7 +55,9 @@ ScavTrap::~ScavTrap(void)
 	std::cout << "ScavTrap " << "Destructor for " << this->_name << " called" << std::endl;
 }
 
-// MEMBER FUNCTIONS
+/****************************************************/
+/*				MEMBER FUNCTIONS					*/
+/****************************************************/
 
 void ScavTrap::guardGate(void)
 {

@@ -6,13 +6,15 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:39:47 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/17 10:47:53 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "../include/FragTrap.hpp"
 
-// CONSTRUCTORS
+/****************************************************/
+/*				CONSTRUCTORS						*/
+/****************************************************/
 
 FragTrap::FragTrap(void)
 {
@@ -52,7 +54,9 @@ FragTrap::~FragTrap(void)
 	std::cout << "FragTrap " << "Destructor for " << this->_name << " called" << std::endl;
 }
 
-// MEMBER FUNCTIONS
+/****************************************************/
+/*				MEMBER FUNCTIONS					*/
+/****************************************************/
 
 void FragTrap::highFivesGuys(void)
 {
