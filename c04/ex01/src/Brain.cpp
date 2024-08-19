@@ -19,25 +19,28 @@
 
 Brain::Brain(void) 
 {
-	std::cout << RED << "Constructor for " << "Brain" << " called" << RESET << std::endl;
+	std::cout << RED << "Brain " << "Constructor for " << "Brain" << " called" << RESET << std::endl;
 }
 
 Brain::Brain(const Brain& cpy)
 {
-	std::cout << RED << "Copy constructor called" << RESET << std::endl;
+	std::cout << RED << "Brain " << "Copy constructor called" << RESET << std::endl;
 	*this = cpy;
 }
 
 Brain& Brain::operator=(const Brain& cpy)
 {
-	std::cout << RED << "Copy assignment constructor called" << RESET << std::endl;
-	this->ideas = cpy.ideas;
+	std::cout << RED << "Brain " << " copy assignment operator called" << RESET << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		this->ideas[i] = cpy.ideas[i];
+	}
 	return (*this);
 }
 
 Brain::~Brain(void)
 {
-	std::cout << RED << "Destructor for " << "Brain" << " called" << RESET << std::endl;
+	std::cout << RED << "Brain " << "Destructor for " << "Brain" << " called" << RESET << std::endl;
 }
 
 /****************************************************/
