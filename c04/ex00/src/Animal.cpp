@@ -35,7 +35,7 @@ Animal::Animal(const Animal &cpy)
 
 Animal &Animal::operator=(const Animal &cpy)
 {
-	std::cout << BLUE << "Animal " << "Copy assignment constructor called" << RESET << std::endl;
+	std::cout << BLUE << "Animal " << " copy assignment operator called" << RESET << std::endl;
 	this->type = cpy.type;
 	return (*this);
 }

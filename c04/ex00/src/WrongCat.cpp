@@ -19,25 +19,25 @@
 
 WrongCat::WrongCat(void) : WrongAnimal("WrongCat")
 {
-	std::cout << ORANGE << "Constructor for " << this->WrongAnimal::type << " called" << RESET << std::endl;
+	std::cout << ORANGE << "WrongCat " << "Constructor for " << this->WrongAnimal::type << " called" << RESET << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &cpy) : WrongAnimal(cpy)
 {
-	std::cout << ORANGE << "Copy constructor called" << RESET << std::endl;
+	std::cout << ORANGE << "WrongCat " << "Copy constructor called" << RESET << std::endl;
 	*this = cpy;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &cpy)
 {
-	std::cout << ORANGE << "Copy assignment constructor called" << RESET << std::endl;
+	std::cout << ORANGE << "WrongCat " << " copy assignment operator called" << RESET << std::endl;
 	this->type = cpy.type;
 	return (*this);
 }
 
 WrongCat::~WrongCat(void)
 {
-	std::cout << ORANGE << "Destructor for " << this->type << " called" << RESET << std::endl;
+	std::cout << ORANGE << "WrongCat " << "Destructor for " << this->type << " called" << RESET << std::endl;
 }
 
 /****************************************************/

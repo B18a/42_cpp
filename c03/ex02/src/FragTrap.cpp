@@ -39,7 +39,7 @@ FragTrap::FragTrap(const FragTrap &cpy) : ClapTrap(cpy)
 // copy assignment operator
 FragTrap &FragTrap::operator=(const FragTrap &cpy)
 {
-	std::cout << "FragTrap " << "Copy assignment constructor called" << std::endl;
+	std::cout << "FragTrap " << " copy assignment operator called" << std::endl;
 	this->_name = cpy._name;
 	this->_health = cpy._health;
 	this->_energy = cpy._energy;

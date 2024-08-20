@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(const ClapTrap &cpy)
 // copy assignment operator
 ClapTrap &ClapTrap::operator=(const ClapTrap &cpy)
 {
-	std::cout << "Copy assignment constructor called" << std::endl;
+	std::cout << " copy assignment operator called" << std::endl;
 	this->_name = cpy._name;
 	this->_health = cpy._health;
 	this->_energy = cpy._energy;

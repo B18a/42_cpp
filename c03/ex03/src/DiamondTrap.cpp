@@ -47,7 +47,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &cpy) :
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &cpy)
 {
-	std::cout << "DiamondTrap " << "Copy assignment constructor called" << std::endl;
+	std::cout << "DiamondTrap " << " copy assignment operator called" << std::endl;
 	this->_name = cpy._name;
 	return (*this);
 }

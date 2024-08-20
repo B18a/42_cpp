@@ -23,7 +23,7 @@ Fixed::Fixed(const Fixed& cpy)
 // copy assignment operator
 Fixed& Fixed::operator=(const Fixed& cpy)
 {
-	std::cout<<"Copy assignment constructor called"<<std::endl;
+	std::cout<<" copy assignment operator called"<<std::endl;
 	if(this != &cpy)
 		this->_fixed_nbr = cpy.getRawBits();
 	return *this;

@@ -19,25 +19,25 @@
 
 Dog::Dog(void) : Animal("Dog")
 {
-	std::cout << GREEN << "Constructor for " << this->Animal::type << " called" << RESET << std::endl;
+	std::cout << GREEN << "Dog " << "Constructor for " << this->Animal::type << " called" << RESET << std::endl;
 }
 
 Dog::Dog(const Dog &cpy) : Animal(cpy)
 {
-	std::cout << GREEN << "Copy constructor called" << RESET << std::endl;
+	std::cout << GREEN << "Dog " << "Copy constructor called" << RESET << std::endl;
 	*this = cpy;
 }
 
 Dog &Dog::operator=(const Dog &cpy)
 {
-	std::cout << GREEN << "Copy assignment constructor called" << RESET << std::endl;
+	std::cout << GREEN << "Dog " << " copy assignment operator called" << RESET << std::endl;
 	this->type = cpy.type;
 	return (*this);
 }
 
 Dog::~Dog(void)
 {
-	std::cout << GREEN << "Destructor for " << this->type << " called" << RESET << std::endl;
+	std::cout << GREEN << "Dog " << "Destructor for " << this->type << " called" << RESET << std::endl;
 }
 
 /****************************************************/

@@ -35,7 +35,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal &cpy)
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &cpy)
 {
-	std::cout << BLUE << "WrongAnimal " << "Copy assignment constructor called" << RESET << std::endl;
+	std::cout << BLUE << "WrongAnimal " << " copy assignment operator called" << RESET << std::endl;
 	this->type = cpy.type;
 	return (*this);
 }

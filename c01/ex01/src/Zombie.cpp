@@ -29,4 +29,5 @@ void Zombie::announce(void)
 void Zombie::add_brain(std::string name)
 {
 	this->name = name;
+	//announce();
 }

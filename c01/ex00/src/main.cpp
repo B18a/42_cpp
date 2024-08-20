@@ -15,16 +15,23 @@
 
 int	main(void)
 {
-	Zombie	zombie3;
 	Zombie	*heapZ;
 
-	std::cout << "---------Zombie on Stack---------" << std::endl;
+	std::cout << "  |                               |  " << std::endl;
+	std::cout << "  v      Zombie on Stack START    v  " << std::endl;
 	Zombie zombie1("Frank");
 	Zombie zombie2("Herbert");
 	std::cout << std::endl;
 	randomChump("Kumar");
-	std::cout << "---------Zombie on Heap START---------" << std::endl;
+	std::cout << std::endl;
+	std::cout << "  |                               |  " << std::endl;
+	std::cout << "  v      Zombie on Heap START     v  " << std::endl;
 	heapZ = newZombie("HeapZ");
 	delete (heapZ);
-	std::cout << "---------Zombie on Heap END---------" << std::endl;
+	std::cout << "  ^                               ^  " << std::endl;
+	std::cout << "  |      Zombie on Heap END       |  " << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "  |                               |  " << std::endl;
+	std::cout << "  v      Zombie on Stack END      v  " << std::endl;
 }

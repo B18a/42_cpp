@@ -39,7 +39,7 @@ ScavTrap::ScavTrap(const ScavTrap &cpy) : ClapTrap(cpy)
 // copy assignment operator
 ScavTrap &ScavTrap::operator=(const ScavTrap &cpy)
 {
-	std::cout << "ScavTrap " << "Copy assignment constructor called" << std::endl;
+	std::cout << "ScavTrap " << " copy assignment operator called" << std::endl;
 	this->_name = cpy._name;
 	this->_health = cpy._health;
 	this->_energy = cpy._energy;

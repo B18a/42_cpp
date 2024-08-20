@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: andreasjehle <andreasjehle@student.42.f    +#+  +:+       +#+         #
+#    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 19:44:08 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/17 13:58:32 by andreasjehl      ###   ########.fr        #
+#    Updated: 2024/08/17 12:55:49 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 CXX			= g++
 CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic -std=c++98
-NAME		= animal_brain
+NAME		= animal
 OBJ_DIR		= obj
 SRC_DIR		= src
 INC_DIR		= include
@@ -22,10 +22,7 @@ REMOVE		= rm -rf
 
 # INTERNAL FUNCTIONS
 FUNCTIONS	=	$(SRC_DIR)/main.cpp \
-				$(SRC_DIR)/Animal.cpp \
-				$(SRC_DIR)/Dog.cpp \
-				$(SRC_DIR)/Cat.cpp \
-				$(SRC_DIR)/Brain.cpp \
+				$(SRC_DIR)/AMateria.cpp
 
 # INTERNAL OBJECT
 OBJECTS		= $(addprefix $(OBJ_DIR)/, $(notdir $(FUNCTIONS:.cpp=.o)))
