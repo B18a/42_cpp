@@ -11,10 +11,14 @@ int	ft_replace(std::string filename, std::string str1, std::string str2)
 	std::string line;
 	std::ifstream input(filename);
 	if (!input)
+	{
+		std::cout << "failed to open file" << '\n';
 		return (1);
+	}
 	std::ofstream output(filename + ".replace");
 	if (!output)
 	{
+		std::cout << "failed to create file.replace" << '\n';
 		input.close();
 		return (1);
 	}

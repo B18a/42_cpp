@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
+/*   By: andreasjehle <andreasjehle@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:55:48 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 13:55:56 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/21 14:19:36 by andreasjehl      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Weapon::Weapon(std::string type)
 	this->setType(type);
 }
 
-std::string const &Weapon::getType(void) const
+std::string const& Weapon::getType(void) const
 {
 	return (this->_type);
 }
