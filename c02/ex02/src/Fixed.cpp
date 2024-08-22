@@ -67,8 +67,7 @@ int Fixed::toInt( void ) const
 
 std::ostream &operator<<(std::ostream &output, const Fixed &nbr)
 {
-	output << nbr.toFloat();
-	return output;
+	return (output << nbr.toFloat());
 }
 
 
