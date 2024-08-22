@@ -14,9 +14,9 @@ Harl::~Harl(void){}
 
 void	Harl::complain(std::string level)
 {
-	int	i;
-	void	(Harl::*funcPtr[4])(void);
-	std::string levels[4];
+	int			i;
+	void		(Harl::*funcPtr[4])(void);
+	std::string	levels[4];
 
 	i = 0;
 

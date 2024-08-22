@@ -59,16 +59,11 @@ float Fixed::toFloat( void ) const
 
 int Fixed::toInt( void ) const
 {
-	int nbr;
-	nbr = this->getRawBits() >> this->_bits;
-
-	return nbr;
+	return (this->getRawBits() >> this->_bits);
 }
 
 std::ostream &operator<<(std::ostream &output, const Fixed &nbr)
 {
 	output << nbr.toFloat();
-	// output << " ";
-	// output << nbr.toInt();
 	return output;
 }
