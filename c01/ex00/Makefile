@@ -6,12 +6,12 @@
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 13:53:46 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/16 13:53:52 by ajehle           ###   ########.fr        #
+#    Updated: 2024/08/23 15:56:19 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-ÍCXX			= g++
-CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
+CXX			= c++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME		= zombie
 OBJ_DIR		= obj
 SRC_DIR		= src

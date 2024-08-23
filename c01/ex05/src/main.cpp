@@ -1,15 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/16 13:50:40 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:51:14 by ajehle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include"Harl.hpp"
+#include "../include/Harl.hpp"
+#include <iostream>
 
-
-int	main(int argc, char **argv)
+int	main(void)
 {
-		Harl	harl;
+	Harl karen;
 
-		harl.complain("INFO");
-		harl.complain("DEBUG");
-		harl.complain("ERROR");
-		harl.complain("WARNING");
-
-		return (0);
+	karen.complain("DEBUG");
+	karen.complain("INFO");
+	karen.complain("ERROR");
+	karen.complain("WARNING");
+	return (0);
 }

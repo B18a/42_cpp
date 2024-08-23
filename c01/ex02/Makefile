@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/16 13:54:04 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/16 13:54:10 by ajehle           ###   ########.fr        #
+#    Created: 2024/08/16 13:53:46 by ajehle            #+#    #+#              #
+#    Updated: 2024/08/23 15:56:29 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX			= g++
-CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
-NAME		= brain
+CXX			= c++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+NAME		= references
 OBJ_DIR		= obj
 SRC_DIR		= src
 INC_DIR		= include

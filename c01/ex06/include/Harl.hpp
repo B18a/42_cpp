@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 13:51:06 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/22 11:17:40 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/22 09:33:11 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:39:05 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-Zombie*	newZombie(std::string name)
+# define LVL 4
+# include <iostream>
+
+class Harl
 {
-	return (new Zombie(name));
-}
+  public:
+	Harl(void);
+	~Harl(void);
+
+	void complain( std::string level );
+	void execute_complaint(int level);
+
+  private:
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
+};
+
+#endif

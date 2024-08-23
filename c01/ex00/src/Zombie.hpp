@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:51:39 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 13:52:03 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/22 11:17:32 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Zombie
 	std::string name;
 };
 
-Zombie	*newZombie(std::string name);
+Zombie*	newZombie(std::string name);
 void	randomChump(std::string name);
 
 #endif

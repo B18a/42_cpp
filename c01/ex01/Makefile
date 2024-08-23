@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/16 13:53:37 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/16 13:53:56 by ajehle           ###   ########.fr        #
+#    Created: 2024/08/16 13:53:46 by ajehle            #+#    #+#              #
+#    Updated: 2024/08/23 15:56:25 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX			= g++
-CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
+CXX			= c++
+CXXFLAGS	= -Wall -Wextra -Werror #-std=c++98
 NAME		= zombieHorde
 OBJ_DIR		= obj
 SRC_DIR		= src
@@ -21,7 +21,7 @@ REMOVE		= rm -rf
 # INTERNAL FUNCTIONS
 FUNCTIONS	=	$(SRC_DIR)/main.cpp \
 				$(SRC_DIR)/Zombie.cpp \
-				$(SRC_DIR)/zombieHorde.cpp
+				$(SRC_DIR)/zombieHorde.cpp \
 
 # INTERNAL OBJECT
 OBJECTS		= $(addprefix $(OBJ_DIR)/, $(notdir $(FUNCTIONS:.cpp=.o)))

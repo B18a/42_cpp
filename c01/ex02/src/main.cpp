@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
-/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 13:54:17 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 13:54:23 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/21 19:39:32 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:51:39 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,23 @@
 
 int	main(void)
 {
-	std::string string = "HI THIS IS BRAIN";
+	std::string string =  "HI THIS IS BRAIN";
 	std::string* stringPTR = &string;
-	std::string& stringREF = string;	
-	std::cout << "Address of string:	" << &string << std::endl;
-	std::cout << "Address of stringPTR:	" << stringPTR << std::endl;
-	std::cout << "Address of stringREF:	" << &stringREF << std::endl;
-	std::cout << "Value of string:	" << string << std::endl;
-	std::cout << "Value of stringPTR:	" << *stringPTR << std::endl;
-	std::cout << "Value of stringREF:	" << stringREF << std::endl;
+	std::string& stringREF = string;
+
+
+	std::cout << "The address of string		" << &string << std::endl;
+	std::cout << "The address of stringPTR	" << stringPTR << std::endl;
+	std::cout << "The address of stringREF	" << &stringREF << std::endl;
+
+
+	std::cout << std::endl;
+	std::cout << "The value of string		" << string << std::endl;
+	std::cout << "The value of stringPTR		" << *stringPTR << std::endl;
+	std::cout << "The value of stringREF		" << stringREF << std::endl;
 	return (0);
 }
+
 
 
 /*
@@ -54,6 +60,6 @@ there is no double reference like pointers
 	int *pX = &x;
 	int **ppX = &pX;	✅
 
-	int &ref = x;		
+	int &ref = x;
 	int &&rRef = ref;	❌
 */

@@ -1,62 +1,74 @@
-#include"Harl.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/22 09:33:02 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:33:07 by ajehle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../include/Harl.hpp"
 
-Harl::Harl(void){}
-Harl::~Harl(void){}
+/****************************************************/
+/*				CONSTRUCTORS						*/
+/****************************************************/
 
-
-// void	(Harl::*funcPtr[4])(void)
-// funcPtr[4]	- declaration of an array with 4 elements
-// void			- no return value
-// (void)		- takes no parameter
-// Harl::*		- indication that funcPtr is a member function of Class harl
-
-
-void	Harl::complain(std::string level)
+Harl::Harl(void)
 {
-	int			i;
-	void		(Harl::*funcPtr[4])(void);
-	std::string	levels[4];
+	// std::cout << "Harl Object created" << std::endl;
+}
 
-	i = 0;
+Harl::~Harl(void)
+{
+	// std::cout << "Harl Object destroyed" << std::endl;
+}
 
-	funcPtr[0] = &Harl::debug;
-	funcPtr[1] = &Harl::info;
-	funcPtr[2] = &Harl::warning;
-	funcPtr[3] = &Harl::error;
+/****************************************************/
+/*			PUBLIC MEMBER FUNCTIONS					*/
+/****************************************************/
 
-	levels[0] = "DEBUG";
-	levels[1] = "INFO";
-	levels[2] = "WARNING";
-	levels[3] = "ERROR";
+// the THIS pointer in "(this->*funcPTR[i])()" is necessary to tell the compiler which instance of the class should be operated on
+// without the brackets in "(this->*funcPTR[i])()" the compiler would interpret it like this "(this->*(funcPTR[i]()))" which is wrong
 
-	while(i < 4)
+void Harl::complain(std::string level)
+{
+	void (Harl::*funcPTR[LVL])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string complaint[LVL] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int i = 0;
+	while (i < LVL)
 	{
-		if(levels[i] == level)
-			(this->*funcPtr[i])();
+		if(complaint[i] == level)
+		{
+			(this->*funcPTR[i])();
+			return;
+		}
 		i++;
 	}
 }
 
-void	Harl::debug(void)
+/****************************************************/
+/*			PRIVATE MEMBER FUNCTIONS				*/
+/****************************************************/
+
+void Harl::debug(void)
 {
-	std::cout<< "DEBUG" << std::endl;
+	std::cout << "This is a DEBUG" << std::endl;
 }
 
-
-void	Harl::info(void)
+void Harl::info(void)
 {
-	std::cout<< "INFO" << std::endl;
-
+	std::cout << "This is a INFO" << std::endl;
 }
 
-void	Harl::warning(void)
+void Harl::warning(void)
 {
-	std::cout<< "WARNING" << std::endl;
+	std::cout << "This is a WARNING" << std::endl;
 }
 
-
-void	Harl::error(void)
+void Harl::error(void)
 {
-	std::cout<<  "ERROR" << std::endl;
+	std::cout << "This is a ERROR" << std::endl;
 }

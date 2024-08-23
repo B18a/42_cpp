@@ -1,17 +1,26 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/08/22 09:32:53 by ajehle            #+#    #+#              #
+#    Updated: 2024/08/23 15:56:43 by ajehle           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-
-CXX			= g++
-#CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
+CXX			= c++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME		= harl
 OBJ_DIR		= obj
 SRC_DIR		= src
 INC_DIR		= include
 REMOVE		= rm -rf
 
-
 # INTERNAL FUNCTIONS
 FUNCTIONS	=	$(SRC_DIR)/main.cpp \
-				$(SRC_DIR)/Harl.cpp
+				$(SRC_DIR)/Harl.cpp \
 
 
 # INTERNAL OBJECT

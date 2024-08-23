@@ -5,22 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 13:54:51 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 13:55:16 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/16 13:51:30 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:02:09 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "../include/HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
+/****************************************************/
+/*				CONSTRUCTORS						*/
+/****************************************************/
+
+HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weapon(weapon)
 {
+	// std::cout << "HumanA Object created " << this->_name << std::endl;
 }
 
 HumanA::~HumanA(void)
 {
+	// std::cout << "HumanA Object destroyed " << this->_name << std::endl;
 }
 
-void HumanA::attack(void)
+/****************************************************/
+/*				MEMBER FUNCTIONS					*/
+/****************************************************/
+
+void	HumanA::attack()
 {
-	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
+	std::cout << this->_name
+		<< " attacks with their "
+		<< this->_weapon.getType()
+		<< std::endl;
 }

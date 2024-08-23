@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:50:40 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 13:50:50 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/08/23 11:51:53 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ int	main(void)
 
 	std::cout << "  |                               |  " << std::endl;
 	std::cout << "  v      Zombie on Stack END      v  " << std::endl;
+	return (0);
 }

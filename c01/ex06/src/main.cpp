@@ -1,33 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/16 13:50:40 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:50:52 by ajehle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include"Harl.hpp"
+#include "../include/Harl.hpp"
+#include <iostream>
 
-
-int	main(int argc, char **argv)
+int	main(int argc, char** argv)
 {
-		Harl	harl;
-
-		if(argc == 2)
-		{
-			switch (harl.get_level(argv[1]))
-			{
-				case 0:
-					harl.complain("DEBUG");
-					break;
-				case 1:
-					harl.complain("INFO");
-					break;
-				case 2:
-					harl.complain("WARNING");
-					break;
-				case 3:
-					harl.complain("ERROR");
-					break;
-				case 4:
-					std::cout<<"some blablabla"<<std::endl;
-					break;
-			}
-		}
-		else
-			std::cout<<"some blablabla"<<std::endl;
-		return (0);
+	if (argc == 2)
+	{
+		Harl karen;
+		karen.complain((std::string)(argv[1]));
+	}
+	return (0);
 }

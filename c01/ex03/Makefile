@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/16 13:54:39 by ajehle            #+#    #+#              #
-#    Updated: 2024/08/16 13:54:45 by ajehle           ###   ########.fr        #
+#    Created: 2024/08/16 13:53:46 by ajehle            #+#    #+#              #
+#    Updated: 2024/08/23 15:56:32 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX			= g++
-CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic
+CXX			= c++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME		= violence
 OBJ_DIR		= obj
 SRC_DIR		= src
@@ -22,7 +22,7 @@ REMOVE		= rm -rf
 FUNCTIONS	=	$(SRC_DIR)/main.cpp \
 				$(SRC_DIR)/Weapon.cpp \
 				$(SRC_DIR)/HumanA.cpp \
-				$(SRC_DIR)/HumanB.cpp
+				$(SRC_DIR)/HumanB.cpp \
 
 # INTERNAL OBJECT
 OBJECTS		= $(addprefix $(OBJ_DIR)/, $(notdir $(FUNCTIONS:.cpp=.o)))

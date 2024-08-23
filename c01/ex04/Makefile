@@ -1,17 +1,25 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/08/16 13:53:46 by ajehle            #+#    #+#              #
+#    Updated: 2024/08/23 15:56:35 by ajehle           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-
-CXX			= g++
-CXXFLAGS	= -Wall -Wextra -Werror -Wpedantic -std=c++98
-NAME		= strings
+CXX			= c++
+CXXFLAGS	= -Wall -Wextra -Werror
+NAME		= sed
 OBJ_DIR		= obj
 SRC_DIR		= src
 INC_DIR		= include
 REMOVE		= rm -rf
 
-
 # INTERNAL FUNCTIONS
-FUNCTIONS	=	$(SRC_DIR)/main.cpp \
-
+FUNCTIONS	=	$(SRC_DIR)/main.cpp
 
 # INTERNAL OBJECT
 OBJECTS		= $(addprefix $(OBJ_DIR)/, $(notdir $(FUNCTIONS:.cpp=.o)))

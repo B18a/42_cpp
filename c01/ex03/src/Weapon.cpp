@@ -3,33 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasjehle <andreasjehle@student.42.f    +#+  +:+       +#+        */
+/*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 13:55:48 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/21 14:19:36 by andreasjehl      ###   ########.fr       */
+/*   Created: 2024/08/16 13:51:30 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/22 12:05:23 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "../include/Weapon.hpp"
+
+/****************************************************/
+/*				CONSTRUCTORS						*/
+/****************************************************/
 
 Weapon::Weapon(void)
 {
-}
-Weapon::~Weapon(void)
-{
+	// std::cout << "Weapon Object created " << std::endl;
 }
 
 Weapon::Weapon(std::string type)
 {
 	this->setType(type);
+	// std::cout << "Weapon Object created " << this->type << std::endl;
 }
 
-std::string const& Weapon::getType(void) const
+Weapon::~Weapon(void)
 {
-	return (this->_type);
+	// std::cout << "Weapon Object destroyed " << this->type << std::endl;
+}
+
+/****************************************************/
+/*				MEMBER FUNCTIONS					*/
+/****************************************************/
+
+// const in return type -> caller of function cannot modify value
+// const in member funciton -> function cannot modify value
+
+const std::string& Weapon::getType() const
+{
+	return (this->type);
 }
 
 void Weapon::setType(std::string type)
 {
-	this->_type = type;
+	this->type = type;
 }

@@ -1,70 +1,96 @@
-#include"Harl.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/22 09:33:02 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:54:08 by ajehle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../include/Harl.hpp"
 
-Harl::Harl(void){}
-Harl::~Harl(void){}
+/****************************************************/
+/*				CONSTRUCTORS						*/
+/****************************************************/
 
-
-int	Harl::get_level(std::string level)
+Harl::Harl(void)
 {
-	int	i;
-	std::string levels[4];
+	// std::cout << "Harl Object created" << std::endl;
+}
 
-	i = 0;
-	levels[0] = "DEBUG";
-	levels[1] = "INFO";
-	levels[2] = "WARNING";
-	levels[3] = "ERROR";
-	while(i < 4)
+Harl::~Harl(void)
+{
+	// std::cout << "Harl Object destroyed" << std::endl;
+}
+
+/****************************************************/
+/*			PUBLIC MEMBER FUNCTIONS					*/
+/****************************************************/
+
+void Harl::complain(std::string level)
+{
+	std::string complaint[LVL] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int i = 0;
+	while (i < LVL)
 	{
-		if(levels[i] == level)
-			return i;
+		if(complaint[i] == level)
+		{
+			execute_complaint(i);
+			return ;
+		}
 		i++;
 	}
-	return(4);
+	execute_complaint(5);
 }
 
-
-// void	(Harl::*funcPtr[4])(void)
-// funcPtr[4]	- declaration of an array with 4 elements
-// void			- no return value
-// (void)		- takes no parameter
-// Harl::*		- indication that funcPtr is a member function of Class harl
-
-
-void	Harl::complain(std::string level)
+void Harl::execute_complaint(int level)
 {
-	void	(Harl::*funcPtr[4])(void);
-
-	funcPtr[0] = &Harl::debug;
-	funcPtr[1] = &Harl::info;
-	funcPtr[2] = &Harl::warning;
-	funcPtr[3] = &Harl::error;
-
-	(this->*funcPtr[get_level(level)])();
+	switch (level)
+	{
+	case 0 :
+		this->debug();
+		break;
+	case 1 :
+		this->info();
+		break;
+	case 2 :
+		this->warning();
+		break;
+	case 3 :
+		this->error();
+		break;
+	default:
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		break;
+	}
 }
 
-void	Harl::debug(void)
+/****************************************************/
+/*			PRIVATE MEMBER FUNCTIONS				*/
+/****************************************************/
+
+void Harl::debug(void)
 {
-	std::cout<< "DEBUG" << std::endl;
-	Harl::info();
+	std::cout << "This is a DEBUG" << std::endl;
+	this->info();
 }
 
-
-void	Harl::info(void)
+void Harl::info(void)
 {
-	std::cout<< "INFO" << std::endl;
-	Harl::warning();
+	std::cout << "This is a INFO" << std::endl;
+	this->warning();
 }
 
-void	Harl::warning(void)
+void Harl::warning(void)
 {
-	std::cout<< "WARNING" << std::endl;
-	Harl::error();
+	std::cout << "This is a WARNING" << std::endl;
+	this->error();
 }
 
-
-void	Harl::error(void)
+void Harl::error(void)
 {
-	std::cout<<  "ERROR" << std::endl;
+	std::cout << "This is a ERROR" << std::endl;
 }
