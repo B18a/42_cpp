@@ -22,13 +22,13 @@ Dog::Dog(void) : Animal("Dog")
 	std::cout << "Dog " << "Constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &cpy) : Animal("Dog")
+Dog::Dog(const Dog& cpy) : Animal(cpy)
 {
 	std::cout << "Dog " << "Copy constructor called" << std::endl;
 	*this = cpy;
 }
 
-Dog &Dog::operator=(const Dog &cpy)
+Dog& Dog::operator=(const Dog& cpy)
 {
 	std::cout << "Dog " << " copy assignment operator called" << std::endl;
 	if(this != &cpy)

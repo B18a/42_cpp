@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,48 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/WrongAnimal.hpp"
+#include "../include/Cat.hpp"
 #include "../include/Colors.hpp"
 
 /****************************************************/
 /*				CONSTRUCTORS						*/
 /****************************************************/
 
-WrongAnimal::WrongAnimal(void) : type("default")
+Cat::Cat(void) : Animal("Cat"), brain(new Brain())
 {
-	std::cout << "WrongAnimal " << "Constructor for " << "DEFAULT" << " called" << std::endl;
+	std::cout << "Cat " << "Constructor called" << std::endl;
+	//this->brain = new Brain();
 }
 
-WrongAnimal::WrongAnimal(std::string type) : type(type)
+Cat::Cat(const Cat& cpy) : Animal(cpy), brain(new Brain(*cpy.brain))
 {
-	std::cout << "WrongAnimal " << "Constructor for " << type << " called" << std::endl;
+	std::cout << "Cat " << "Copy constructor called" << std::endl;
+	//this->brain = new Brain(*cpy.brain);
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& cpy)
+Cat& Cat::operator=(const Cat& cpy)
 {
-	std::cout << "WrongAnimal " << "Copy constructor called" << std::endl;
-	*this = cpy;
-}
-
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal& cpy)
-{
-	std::cout << "WrongAnimal " << " copy assignment operator called" << std::endl;
+	std::cout << "Cat" << " copy assignment operator called" << std::endl;
 	if(this != &cpy)
 	{
-		this->type = cpy.type;
+        Animal::operator=(cpy); // Assign base class part
+        delete brain; // Clean up existing Brain
+        brain = new Brain(*cpy.brain); // Deep copy Brain
 	}
 	return (*this);
 }
 
-WrongAnimal::~WrongAnimal(void)
+Cat::~Cat(void)
 {
-	std::cout << "WrongAnimal " << "Destructor for " << type << " called" << std::endl;
+	std::cout << "Cat " << "Destructor called" << std::endl;
+	delete this->brain;
 }
 
 /****************************************************/
 /*				MEMBER FUNCTIONS					*/
 /****************************************************/
 
-void WrongAnimal::makeSound() const
+void Cat::makeSound() const
 {
-std::cout << GREEN << "WrongAnimal Class makes sound" << RESET << std::endl;}
+std::cout << BLUE << "Cat Class makes sound" << RESET << std::endl;}

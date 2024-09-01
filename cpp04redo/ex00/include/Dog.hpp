@@ -19,14 +19,11 @@ class Dog : public Animal
 {
   public:
 	Dog(void);
-	Dog(const Dog &cpy);
-	Dog &operator=(const Dog &cpy);
+	Dog(const Dog& cpy);
+	Dog& operator=(const Dog& cpy);
 	~Dog(void);
 
 	void makeSound() const override; 
-	// "overriding" the function because in base class animal the function virtual!
-	// if it would be not virtual in the base it would be "redefining"
-	// with keyword "override" the compiler checks if this functions exits in the base class and hast the same signature (name, parameter and const or not)
 
   protected:
 
@@ -34,3 +31,17 @@ class Dog : public Animal
 
 
 #endif
+
+
+/****************************************************/
+/*				EXPLANATIONS						*/
+/****************************************************/
+/*
+	void makeSound() const override; 
+
+	"overriding" the function because in base class animal the function virtual!
+	if it would be not virtual in the base it would be "redefining"
+	with keyword "override" the compiler checks if this functions exits 
+	in the base class and hast the same signature (name, parameter and const or not)
+
+*/

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
 
-class WrongAnimal
+class Brain
 {
   public:
-	WrongAnimal(void);
-	WrongAnimal(std::string type);
-	WrongAnimal(const WrongAnimal& cpy);
-	WrongAnimal& operator=(const WrongAnimal& cpy);
-	virtual ~WrongAnimal(void);
+	Brain(void);
+	Brain(const Brain& cpy);
+	Brain& operator=(const Brain& cpy);
+	~Brain(void);
 
-	void makeSound() const;
-
-  protected:
-	std::string type;
+  private:
+	std::string ideas[100];
 };
 
 

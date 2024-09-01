@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,25 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include <iostream>
+#include"Animal.hpp"
+#include"Brain.hpp"
 
-class WrongAnimal
+class Dog : public Animal
 {
   public:
-	WrongAnimal(void);
-	WrongAnimal(std::string type);
-	WrongAnimal(const WrongAnimal& cpy);
-	WrongAnimal& operator=(const WrongAnimal& cpy);
-	virtual ~WrongAnimal(void);
+	Dog(void);
+	Dog(const Dog& cpy);
+	Dog& operator=(const Dog& cpy);
+	~Dog(void);
 
-	void makeSound() const;
+	void makeSound() const override; 
 
-  protected:
-	std::string type;
+  private:
+	Brain* brain;
+
 };
 
 
 #endif
+
+
+/****************************************************/
+/*				EXPLANATIONS						*/
+/****************************************************/
+/*
+	void makeSound() const override; 
+
+	"overriding" the function because in base class animal the function virtual!
+	if it would be not virtual in the base it would be "redefining"
+	with keyword "override" the compiler checks if this functions exits 
+	in the base class and hast the same signature (name, parameter and const or not)
+
+*/

@@ -22,13 +22,13 @@ Cat::Cat(void) : Animal("Cat")
 	std::cout << "Cat " << "Constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &cpy) : Animal("Cat")
+Cat::Cat(const Cat& cpy) : Animal(cpy)
 {
 	std::cout << "Cat " << "Copy constructor called" << std::endl;
 	*this = cpy;
 }
 
-Cat &Cat::operator=(const Cat &cpy)
+Cat& Cat::operator=(const Cat& cpy)
 {
 	std::cout << "Cat " << " copy assignment operator called" << std::endl;
 	if(this != &cpy)

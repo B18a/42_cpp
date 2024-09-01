@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,48 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/WrongAnimal.hpp"
+#include "../include/Brain.hpp"
 #include "../include/Colors.hpp"
 
 /****************************************************/
 /*				CONSTRUCTORS						*/
 /****************************************************/
 
-WrongAnimal::WrongAnimal(void) : type("default")
+Brain::Brain(void)
 {
-	std::cout << "WrongAnimal " << "Constructor for " << "DEFAULT" << " called" << std::endl;
+	std::cout << "Brain " << "Constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(std::string type) : type(type)
+Brain::Brain(const Brain& cpy)
 {
-	std::cout << "WrongAnimal " << "Constructor for " << type << " called" << std::endl;
-}
-
-WrongAnimal::WrongAnimal(const WrongAnimal& cpy)
-{
-	std::cout << "WrongAnimal " << "Copy constructor called" << std::endl;
-	*this = cpy;
-}
-
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal& cpy)
-{
-	std::cout << "WrongAnimal " << " copy assignment operator called" << std::endl;
-	if(this != &cpy)
+	std::cout << "Brain " << "Copy constructor called" << std::endl;
+	for(int i = 0; i < 100; ++i)
 	{
-		this->type = cpy.type;
+		this->ideas[i] = cpy.ideas[i];
+	}
+}
+
+Brain& Brain::operator=(const Brain& cpy)
+{
+	std::cout << "Brain " << " copy assignment operator called" << std::endl;
+	if(this != &cpy)
+	for(int i = 0; i < 100; ++i)
+	{
+		this->ideas[i] = cpy.ideas[i];
 	}
 	return (*this);
 }
 
-WrongAnimal::~WrongAnimal(void)
+Brain::~Brain(void)
 {
-	std::cout << "WrongAnimal " << "Destructor for " << type << " called" << std::endl;
+	std::cout << "Brain " << "Destructor called" << std::endl;
 }
 
 /****************************************************/
 /*				MEMBER FUNCTIONS					*/
 /****************************************************/
-
-void WrongAnimal::makeSound() const
-{
-std::cout << GREEN << "WrongAnimal Class makes sound" << RESET << std::endl;}
