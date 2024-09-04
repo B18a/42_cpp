@@ -5,30 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:58:20 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/29 18:27:43 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/30 15:25:17 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-# include <iostream>
-#include "ClapTrap.hpp"
+#include"ClapTrap.hpp"
+
+#include <iostream>
 
 class ScavTrap : virtual public ClapTrap
 {
   public:
 	ScavTrap(void);
 	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap &cpy);				// copy constuctor
-	ScavTrap &operator=(const ScavTrap &cpy);	// copy assignment operator
 	~ScavTrap(void);
+	ScavTrap(const ScavTrap& orig);
+	ScavTrap& operator=(const ScavTrap& orig);
 
-	void guardGate();
+	void attack(const std::string& target);
+	void guardGate(void);
 
-  private:
-
+	static const unsigned int default_hitPoints = 100;
+	static const unsigned int default_energyPoints = 50;
+	static const unsigned int default_attackDamage = 20;
 };
 
 #endif

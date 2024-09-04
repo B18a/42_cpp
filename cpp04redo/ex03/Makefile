@@ -6,7 +6,7 @@
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 13:53:46 by ajehle            #+#    #+#              #
-#    Updated: 2024/09/04 14:02:20 by ajehle           ###   ########.fr        #
+#    Updated: 2024/09/04 15:12:22 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ FUNCTIONS	=	$(SRC_DIR)/main.cpp \
 				$(SRC_DIR)/Ice.cpp \
 				$(SRC_DIR)/Cure.cpp \
 				$(SRC_DIR)/Character.cpp \
+				$(SRC_DIR)/MateriaSource.cpp \
 
 
 

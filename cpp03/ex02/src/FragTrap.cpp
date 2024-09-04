@@ -5,56 +5,64 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:38:21 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/29 18:27:39 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/30 15:24:27 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
 
-// CONSTRUCTORS
+#include "../include/FragTrap.hpp"
 
-FragTrap::FragTrap(void)
+/****************************************************/
+/*				CONSTRUCTORS						*/
+/****************************************************/
+
+FragTrap::FragTrap(void) : ClapTrap("default")
 {
-	std::cout << "FragTrap " << "Constructor for " << "DEFAULT" << " called" << std::endl;
+	std::cout << "FragTrap " << "Constructor called" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "FragTrap " << "Constructor for " << this->_name << " called" << std::endl;
-	this->_health = 100;
-	this->_energy = 100;
-	this->_damage = 30;
-}
-
-// copy constuctor
-FragTrap::FragTrap(const FragTrap &cpy) : ClapTrap(cpy)
-{
-	std::cout << "FragTrap " << "Copy constructor called" << std::endl;
-	this->_health = cpy._health;
-	this->_energy = cpy._energy;
-	this->_damage = cpy._damage;
-}
-
-// copy assignment operator
-FragTrap &FragTrap::operator=(const FragTrap &cpy)
-{
-	std::cout << "FragTrap " << " copy assignment operator called" << std::endl;
-	this->_name = cpy._name;
-	this->_health = cpy._health;
-	this->_energy = cpy._energy;
-	this->_damage = cpy._damage;
-	return (*this);
+	std::cout << "FragTrap " << "Constructor called" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FragTrap " << "Destructor for " << this->_name << " called" << std::endl;
+	std::cout << "FragTrap " << "Destructor called" << std::endl;
 }
 
-// MEMBER FUNCTIONS
+FragTrap::FragTrap(const FragTrap& orig) : ClapTrap(orig)
+{
+	std::cout << "FragTrap " << "Copy constructor called" << std::endl;
+	*this = orig;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& orig)
+{
+	std::cout << "FragTrap " << "Copy assignment operator called" << std::endl;
+	if(this != &orig)
+	{
+		this->_name = orig._name;
+		this->_hitPoints = orig._hitPoints;
+		this->_energyPoints = orig._energyPoints;
+		this->_attackDamage = orig._attackDamage;
+	}
+	return (*this);
+}
+
+/****************************************************/
+/*				MEMBER FUNCTIONS					*/
+/****************************************************/
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap " << this->_name << " gives a HIGH FIVE to everyone in the room" << std::endl;
+	std::cout << this->_name << " gives a High Five to everyone" << std::endl;
+
 }

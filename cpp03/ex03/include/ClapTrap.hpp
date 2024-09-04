@@ -5,35 +5,60 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:39:15 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/29 18:27:43 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/30 15:21:52 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-# include <iostream>
+#include <iostream>
 
 class ClapTrap
 {
   public:
 	ClapTrap(void);
 	ClapTrap(std::string name);
-	ClapTrap(const ClapTrap &cpy);				// copy constuctor
-	ClapTrap &operator=(const ClapTrap &cpy);	// copy assignment operator
+	ClapTrap(const ClapTrap& orig);
+	ClapTrap& operator=(const ClapTrap& orig);
 	~ClapTrap(void);
 
-	// member functions
-	void attack(const std::string &target);
+	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
+	void printStatus(void);
+
   protected:
-	std::string _name;
-	unsigned int _health;
-	unsigned int _energy;
-	unsigned int _damage;
+	std::string		_name;
+	unsigned int	_hitPoints;
+	unsigned int	_energyPoints;
+	unsigned int	_attackDamage;
 };
 
 #endif
+
+/****************************************************/
+/*				THE DIAMOND PROBLEM					*/
+/****************************************************/
+/*
+
+	A   A
+	|   |
+	B   C
+	 \ /
+	  D
+
+the diamond solution:
+keyword
+virtual inheritance
+
+	  A
+	 / \
+	B   C
+	 \ /
+	  D
+
+with virtual inheritance only once the class A is inherited
+*/

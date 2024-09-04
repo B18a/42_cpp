@@ -41,7 +41,7 @@ Ice& Ice::operator=(const Ice& cpy)
 
 Ice::~Ice()
 {
-	std::cout << BLUE << "Ice " << "DESTRUCTOR for " << this->_type << " called" << RESET << std::endl;
+	std::cout << BLUE << "Ice " << "DESTRUCTOR called" << RESET << std::endl;
 }
 
 /****************************************************/

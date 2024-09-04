@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:37:55 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/29 18:27:43 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/30 15:23:19 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
+#include"ClapTrap.hpp"
 
-# include <iostream>
-#include "ScavTrap.hpp"
+#include <iostream>
 
-class FragTrap : public ClapTrap
+class ScavTrap : public ClapTrap
 {
   public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(const FragTrap &cpy);				// copy constuctor
-	FragTrap &operator=(const FragTrap &cpy);	// copy assignment operator
-	~FragTrap(void);
+	ScavTrap(void);
+	ScavTrap(std::string name);
+	~ScavTrap(void);
+	ScavTrap(const ScavTrap& orig);
+	ScavTrap& operator=(const ScavTrap& orig);
 
-	void highFivesGuys(void);
-
-  private:
-
+	void attack(const std::string& target);
+	void guardGate(void);
 };
 
 #endif

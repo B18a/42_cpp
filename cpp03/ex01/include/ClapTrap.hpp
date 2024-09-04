@@ -5,35 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:40:17 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/29 18:27:43 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/30 15:23:04 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-# include <iostream>
+#include <iostream>
 
 class ClapTrap
 {
   public:
 	ClapTrap(void);
 	ClapTrap(std::string name);
-	ClapTrap(const ClapTrap &cpy);				// copy constuctor
-	ClapTrap &operator=(const ClapTrap &cpy);	// copy assignment operator
 	~ClapTrap(void);
+	ClapTrap(const ClapTrap& orig);
+	ClapTrap& operator=(const ClapTrap& orig);
 
-	// member functions
-	void attack(const std::string &target);
+	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
+	void printStatus(void);
+
   protected:
-	std::string _name;
-	unsigned int _health;
-	unsigned int _energy;
-	unsigned int _damage;
+	std::string		_name;
+	unsigned int	_hitPoints;
+	unsigned int	_energyPoints;
+	unsigned int	_attackDamage;
 };
 
 #endif

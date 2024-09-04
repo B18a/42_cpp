@@ -41,7 +41,7 @@ Cure& Cure::operator=(const Cure& cpy)
 
 Cure::~Cure()
 {
-	std::cout << GREEN << "Cure " << "DESTRUCTOR for " << this->_type << " called" << RESET << std::endl;
+	std::cout << GREEN << "Cure " << "DESTRUCTOR called" << RESET << std::endl;
 }
 
 /****************************************************/
