@@ -6,12 +6,12 @@
 #    By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/16 13:53:46 by ajehle            #+#    #+#              #
-#    Updated: 2024/09/04 15:12:22 by ajehle           ###   ########.fr        #
+#    Updated: 2024/09/13 13:07:35 by ajehle           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX			= c++
-CXXFLAGS	= #-Wall -Wextra -Werror #-std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++11
 NAME		= interface
 OBJ_DIR		= obj
 SRC_DIR		= src

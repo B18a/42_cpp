@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:10:08 by ajehle            #+#    #+#             */
-/*   Updated: 2024/09/13 12:19:57 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/09/13 13:19:19 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,12 +105,27 @@ void MateriaSource::copyMateria(const MateriaSource& cpy)
 /*			PUBLIC MEMBER FUNCTIONS					*/
 /****************************************************/
 
-void MateriaSource::learnMateria(AMateria*)
+void MateriaSource::learnMateria(AMateria* m)
 {
-
+	for(int i = 0; i < MAXMATERIA; i++)
+	{
+		if(_materia[i] == nullptr)
+		{
+			_materia[i] = m->clone();
+			return;
+		}
+	}
 }
 
-// AMateria* MateriaSource::createMateria(std::string const & type)
-// {
+AMateria* MateriaSource::createMateria(std::string const & type)
+{
+	for(int i = 0; i < MAXMATERIA; i++)
+	{
+		if(_materia[i] && _materia[i]->getType() == type)
+		{
+			return(_materia[i]->clone());
+		}
+	}
+	return (nullptr);
 
-// }
+}

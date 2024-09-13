@@ -26,7 +26,6 @@ Ice::Ice() : AMateria("ice")
 Ice::Ice(const Ice& cpy) : AMateria(cpy)
 {
 	std::cout << BLUE << "Ice " << "COPY CONSTRUCTOR called" << RESET << std::endl;
-	*this = cpy;
 }
 
 Ice& Ice::operator=(const Ice& cpy)
@@ -34,7 +33,7 @@ Ice& Ice::operator=(const Ice& cpy)
 	std::cout << BLUE << "Ice " << "COPY ASSIGNMENT OPERATOR called" << RESET << std::endl;
 	if(this != &cpy)
 	{
-		this->_type = cpy._type;
+		// type is const an cannot be reassigned
 	}
 	return (*this);
 }

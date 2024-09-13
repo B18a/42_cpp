@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 08:37:41 by ajehle            #+#    #+#             */
-/*   Updated: 2024/09/04 13:18:35 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/09/13 12:43:06 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,21 @@ AMateria::AMateria(std::string const & type) : _type(type)
 	std::cout << MAGENTA << "AMateria " << "CONSTRUCTOR for " << this->_type << " called" << RESET << std::endl;
 }
 
-AMateria::AMateria(const AMateria& cpy)
+AMateria::AMateria(const AMateria& cpy) : _type(cpy._type)
 {
 	std::cout << MAGENTA << "AMateria " << "COPY CONSTRUCTOR called" << RESET << std::endl;
-	*this = cpy;
 }
 
-AMateria& AMateria::operator=(const AMateria& cpy)
-{
-	std::cout << MAGENTA << "AMateria " << "COPY ASSIGNMENT OPERATOR called" << RESET << std::endl;
-	if(this != &cpy)
-	{
-		// this->_type = cpy._type;
-		// reassigning a const member not possible !
-	}
-	return (*this);
-}
+// AMateria& AMateria::operator=(const AMateria& cpy)
+// {
+// 	std::cout << MAGENTA << "AMateria " << "COPY ASSIGNMENT OPERATOR called" << RESET << std::endl;
+// 	if(this != &cpy)
+// 	{
+// 		// this->_type = cpy._type;
+// 		// reassigning a const member not possible !
+// 	}
+// 	return (*this);
+// }
 
 AMateria::~AMateria()
 {

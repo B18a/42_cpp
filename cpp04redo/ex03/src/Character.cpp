@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 08:37:41 by ajehle            #+#    #+#             */
-/*   Updated: 2024/09/04 15:00:49 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/09/13 13:07:19 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,13 @@ void Character::copyMateria(const Character& cpy)
 /****************************************************/
 /*			PUBLIC MEMBER FUNCTIONS					*/
 /****************************************************/
+
+AMateria* Character::getMateria(int idx)
+{
+	if(idx < MAXMATERIA && _materia[idx])
+		return(_materia[idx]);
+	return(nullptr);
+}
 
 std::string const & Character::getName() const
 {

@@ -26,7 +26,6 @@ Cure::Cure() : AMateria("cure")
 Cure::Cure(const Cure& cpy) : AMateria(cpy)
 {
 	std::cout << GREEN << "Cure " << "COPY CONSTRUCTOR called" << RESET << std::endl;
-	*this = cpy;
 }
 
 Cure& Cure::operator=(const Cure& cpy)
@@ -34,7 +33,7 @@ Cure& Cure::operator=(const Cure& cpy)
 	std::cout << GREEN << "Cure " << "COPY ASSIGNMENT OPERATOR called" << RESET << std::endl;
 	if(this != &cpy)
 	{
-		this->_type = cpy._type;
+		// type is const an cannot be reassigned
 	}
 	return (*this);
 }

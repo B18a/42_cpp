@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:06:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/09/13 12:18:28 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/09/13 12:21:57 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ class MateriaSource : public IMateriaSource
 		MateriaSource& operator=(const MateriaSource& cpy);
 		~MateriaSource();
 
-		void learnMateria(AMateria*);
+
+		void learnMateria(AMateria* m);
 		AMateria* createMateria(std::string const & type);
 
 	private:
