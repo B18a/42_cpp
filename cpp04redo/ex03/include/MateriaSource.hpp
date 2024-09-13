@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:06:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/09/04 15:19:25 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/09/13 12:18:28 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,12 @@ class MateriaSource : public IMateriaSource
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);
 
-	protected:
+	private:
 		AMateria* _materia[MAXMATERIA];
+
+		void initMateria();
+		void deleteMateria();
+		void copyMateria(const MateriaSource& cpy);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:10:08 by ajehle            #+#    #+#             */
-/*   Updated: 2024/09/04 15:16:52 by ajehle           ###   ########.fr       */
+/*   Updated: 2024/09/13 12:19:57 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ MateriaSource::MateriaSource(void)
 				<< " called"
 				<< RESET
 				<<  std::endl;
+	initMateria();
 }
 
 
@@ -35,7 +36,8 @@ MateriaSource::MateriaSource(const MateriaSource& cpy)
 				<< "COPY CONSTRUCTOR called"
 				<< RESET
 				<< std::endl;
-	*this = cpy;
+	initMateria();
+	copyMateria(cpy);
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& cpy)
@@ -47,7 +49,9 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& cpy)
 				<< std::endl;
 	if(this != &cpy)
 	{
-
+		deleteMateria();
+		initMateria();
+		copyMateria(cpy);
 	}
 	return (*this);
 }
@@ -59,8 +63,44 @@ MateriaSource::~MateriaSource()
 				<< " DESTRUCTOR for called"
 				<< RESET
 				<< std::endl;
+	deleteMateria();
 }
 
+/****************************************************/
+/*			PRIVATE MEMBER FUNCTIONS				*/
+/****************************************************/
+
+void MateriaSource::initMateria(void)
+{
+	std::cout << "initMateria()" << std::endl;
+	for(int i = 0; i < MAXMATERIA; i++)
+		this->_materia[i] = nullptr;
+}
+
+void MateriaSource::deleteMateria(void)
+{
+	std::cout << "deleteMateria()" << std::endl;
+	for(int i = 0; i < MAXMATERIA; i++)
+	{
+		if(this->_materia[i] != nullptr)
+		{
+			delete(this->_materia[i]);
+			this->_materia[i] = nullptr;
+		}
+	}
+}
+
+void MateriaSource::copyMateria(const MateriaSource& cpy)
+{
+	std::cout << "copyMateria()" << std::endl;
+	for(int i = 0; i < MAXMATERIA; i++)
+	{
+		if(cpy._materia[i] != nullptr)
+			this->_materia[i] = cpy._materia[i]->clone();
+		else
+			this->_materia[i] = nullptr;
+	}
+}
 /****************************************************/
 /*			PUBLIC MEMBER FUNCTIONS					*/
 /****************************************************/
@@ -70,7 +110,7 @@ void MateriaSource::learnMateria(AMateria*)
 
 }
 
-AMateria* MateriaSource::createMateria(std::string const & type)
-{
-	
-}
+// AMateria* MateriaSource::createMateria(std::string const & type)
+// {
+
+// }

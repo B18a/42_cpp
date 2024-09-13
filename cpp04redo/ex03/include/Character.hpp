@@ -40,7 +40,6 @@ class Character : public ICharacter
 		void initMateria();
 		void deleteMateria();
 		void copyMateria(const Character& cpy);
-
 };
 
 #endif

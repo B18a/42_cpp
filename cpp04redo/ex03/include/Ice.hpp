@@ -23,8 +23,10 @@ class Ice : public AMateria
 		Ice& operator=(const Ice& cpy);
 		~Ice();
 
-		virtual AMateria* clone() const;
-		virtual void use(ICharacter& target);
+		// virtual AMateria* clone() const;
+		AMateria* clone() const;
+		// virtual void use(ICharacter& target);
+		void use(ICharacter& target);
 };
 
 #endif
