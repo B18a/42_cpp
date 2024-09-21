@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:40:17 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/16 13:51:39 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 10:58:24 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
 
-# include <iostream>
-# include "Aanimal.hpp"
-# include "Brain.hpp"
+#include"Animal.hpp"
+#include"Brain.hpp"
 
-class Cat : virtual public Aanimal
+class Cat : public Animal
 {
   public:
 	Cat(void);
-	Cat(const Cat &cpy);
-	Cat& operator=(const Cat &cpy);
+	Cat(const Cat& cpy);
+	Cat& operator=(const Cat& cpy);
 	~Cat(void);
 
-	void	makeSound() const;
-	// void	makeSound() const override; //C++11
-  protected:
-  
+	void makeSound() const override; 
+
   private:
 	Brain* brain;
-
+	
 };
+
 
 #endif

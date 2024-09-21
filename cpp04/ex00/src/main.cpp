@@ -1,34 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/16 13:50:40 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:51:46 by ajehle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-
-
-
-
-#include"../include/Colors.hpp"
-#include"../include/Animal.hpp"
-#include"../include/WrongAnimal.hpp"
-#include"../include/Dog.hpp"
-#include"../include/Cat.hpp"
-#include"../include/WrongCat.hpp"
-
-
-
+#include "../include/Animal.hpp"
+#include "../include/Dog.hpp"
+#include "../include/Cat.hpp"
+#include "../include/WrongAnimal.hpp"
+#include "../include/WrongCat.hpp"
 #include <iostream>
 
-int main( void )
+int	main(void)
 {
+/****************************************************/
+/*					VIRTUAL							*/
+/****************************************************/
 
-const Animal* meta = new Animal();
-const Animal* snoopy = new Dog();
-const WrongAnimal* garfield = new WrongCat();
-std::cout << BG_WHITE << " CODE BELOW " << RESET << std::endl << std::endl;
-std::cout << snoopy->getType() << " " << std::endl;
-std::cout << garfield->getType() << " " << std::endl;
-garfield->makeSound(); //will output the cat sound!
-snoopy->makeSound();
-meta->makeSound();
-std::cout << std::endl << BG_WHITE << " CODE ABOVE " << RESET << std::endl;
-delete garfield;
-delete snoopy;
-delete meta;
-return 0;
+	const Animal* dog = new Dog();
+	dog->makeSound();
+//	std::cout << dog->getType() << std::endl;
+	delete dog;
+
+//	const Animal* cat = new Cat();
+//	cat->makeSound();
+//	delete cat;
+
+/****************************************************/
+/*					NON VIRTUAL						*/
+/****************************************************/
+
+	std::cout << std::endl;
+
+	const WrongAnimal* wrongcat = new WrongCat();
+
+	wrongcat->makeSound();
+
+	delete wrongcat;
+
+	return (0);
 }

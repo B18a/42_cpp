@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/17 11:04:05 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/16 13:51:30 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:58:57 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,33 @@
 /*				CONSTRUCTORS						*/
 /****************************************************/
 
-Cat::Cat(void) : Animal("Cat")
+Cat::Cat(void) : Animal("Cat"), brain(new Brain())
 {
-	std::cout << ORANGE << "Cat " << "Constructor for " << this->Animal::type << " called" << RESET << std::endl;
-	this->brain = new Brain();
+	std::cout << "Cat " << "Constructor called" << std::endl;
+	//this->brain = new Brain();
 }
 
-Cat::Cat(const Cat& cpy) : Animal(cpy)
+Cat::Cat(const Cat& cpy) : Animal(cpy), brain(new Brain(*cpy.brain))
 {
-	std::cout << ORANGE << "Cat " << "Copy constructor called" << RESET << std::endl;
-	*this = cpy;
+	std::cout << "Cat " << "Copy constructor called" << std::endl;
+	//this->brain = new Brain(*cpy.brain);
 }
 
 Cat& Cat::operator=(const Cat& cpy)
 {
-	std::cout << ORANGE << "Cat " << " copy assignment operator called" << RESET << std::endl;
-	this->type = cpy.type;
+	std::cout << "Cat" << " copy assignment operator called" << std::endl;
+	if(this != &cpy)
+	{
+        Animal::operator=(cpy); // Assign base class part
+        delete brain; // Clean up existing Brain
+        brain = new Brain(*cpy.brain); // Deep copy Brain
+	}
 	return (*this);
 }
 
 Cat::~Cat(void)
 {
-	std::cout << ORANGE << "Cat " << "Destructor for " << this->type << " called" << RESET << std::endl;
+	std::cout << "Cat " << "Destructor called" << std::endl;
 	delete this->brain;
 }
 
@@ -46,7 +51,6 @@ Cat::~Cat(void)
 /*				MEMBER FUNCTIONS					*/
 /****************************************************/
 
-void	Cat::makeSound(void) const
+void Cat::makeSound() const
 {
-	std::cout << RED << "CAT: " << "Miauuuuu" << RESET << std::endl;
-}
+std::cout << BLUE << "Cat Class makes sound" << RESET << std::endl;}

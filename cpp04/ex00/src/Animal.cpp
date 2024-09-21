@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/17 12:44:38 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/16 13:51:30 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:58:57 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,44 +17,48 @@
 /*				CONSTRUCTORS						*/
 /****************************************************/
 
-Animal::Animal(void)
+Animal::Animal(void) : type("default")
 {
-	std::cout << BLUE << "Animal " << "Constructor for " << "DEFAULT" << " called" << RESET << std::endl;
+	std::cout << "Animal " << "Constructor for " << "DEFAULT" << " called" << std::endl;
 }
 
 Animal::Animal(std::string type) : type(type)
 {
-	std::cout << BLUE << "Animal " << "Constructor for " << this->type << " called" << RESET << std::endl;
+	std::cout << "Animal " << "Constructor for " << type << " called" << std::endl;
 }
 
-Animal::Animal(const Animal &cpy)
+Animal::Animal(const Animal& cpy)
 {
-	std::cout << BLUE << "Animal " << "Copy constructor called" << RESET << std::endl;
+	std::cout << "Animal " << "Copy constructor called" << std::endl;
 	*this = cpy;
 }
 
-Animal &Animal::operator=(const Animal &cpy)
+Animal& Animal::operator=(const Animal& cpy)
 {
-	std::cout << BLUE << "Animal " << " copy assignment operator called" << RESET << std::endl;
-	this->type = cpy.type;
+	std::cout << "Animal " << " copy assignment operator called" << std::endl;
+	if(this != &cpy)
+	{
+		this->type = cpy.type;
+	}
 	return (*this);
 }
 
 Animal::~Animal(void)
 {
-	std::cout << BLUE << "Animal " << "Destructor for " << this->type << " called" << RESET << std::endl;
+	std::cout << "Animal " << "Destructor for " << type << " called" << std::endl;
 }
 
 /****************************************************/
 /*				MEMBER FUNCTIONS					*/
 /****************************************************/
 
-void	Animal::makeSound(void) const
+void Animal::makeSound() const
 {
-	std::cout << YELLOW << "Animal makes sound" << RESET << std::endl;
+	std::cout << CYAN << "ANIMAL Class makes sound" << RESET << std::endl;
 }
 
-std::string	Animal::getType(void) const
+
+std::string	Animal::getType() const
 {
-	return(this->type);
+	return this->type;
 }

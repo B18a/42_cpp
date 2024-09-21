@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 19:22:13 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/16 21:40:17 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/16 13:51:39 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 10:58:24 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ class Brain
 {
   public:
 	Brain(void);
-	Brain(const Brain &cpy);
-	Brain& operator=(const Brain &cpy);
+	Brain(const Brain& cpy);
+	Brain& operator=(const Brain& cpy);
 	~Brain(void);
 
-
-  protected:
+  private:
 	std::string ideas[100];
 };
+
 
 #endif

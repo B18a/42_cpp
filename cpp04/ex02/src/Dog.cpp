@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/17 11:04:05 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/16 13:51:30 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:58:57 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,33 @@
 /*				CONSTRUCTORS						*/
 /****************************************************/
 
-Dog::Dog(void) : Aanimal("Dog")
+Dog::Dog(void) : Animal("Dog"), brain(new Brain())
 {
-	std::cout << GREEN << "Dog " << "Constructor for " << this->Aanimal::type << " called" << RESET << std::endl;
-	this->brain = new Brain();
+	std::cout << "Dog " << "Constructor called" << std::endl;
+	//this->brain = new Brain();
 }
 
-Dog::Dog(const Dog& cpy) : Aanimal(cpy)
+Dog::Dog(const Dog& cpy) : Animal(cpy), brain(new Brain(*cpy.brain))
 {
-	std::cout << GREEN << "Dog " << "Copy constructor called" << RESET << std::endl;
-	*this = cpy;
+	std::cout << "Dog " << "Copy constructor called" << std::endl;
+	//this->brain = new Brain(*cpy.brain);
 }
 
 Dog& Dog::operator=(const Dog& cpy)
 {
-	std::cout << GREEN << "Dog " << " copy assignment operator called" << RESET << std::endl;
-	this->type = cpy.type;
+	std::cout << "Dog" << " copy assignment operator called" << std::endl;
+	if(this != &cpy)
+	{
+        Animal::operator=(cpy); // Assign base class part
+        delete brain; // Clean up existing Brain
+        brain = new Brain(*cpy.brain); // Deep copy Brain
+	}
 	return (*this);
 }
 
 Dog::~Dog(void)
 {
-	std::cout << GREEN << "Dog " << "Destructor for " << this->type << " called" << RESET << std::endl;
+	std::cout << "Dog " << "Destructor called" << std::endl;
 	delete this->brain;
 }
 
@@ -46,7 +51,6 @@ Dog::~Dog(void)
 /*				MEMBER FUNCTIONS					*/
 /****************************************************/
 
-void	Dog::makeSound(void) const
+void Dog::makeSound() const
 {
-	std::cout << MAGENTA << "DOG: " << "Wuff" << RESET << std::endl;
-}
+std::cout << YELLOW << "Dog Class makes sound" << RESET << std::endl;}

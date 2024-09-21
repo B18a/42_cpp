@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajehle <ajehle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 19:24:35 by ajehle            #+#    #+#             */
-/*   Updated: 2024/08/17 12:44:38 by ajehle           ###   ########.fr       */
+/*   Created: 2024/08/16 13:51:30 by ajehle            #+#    #+#             */
+/*   Updated: 2024/08/23 11:58:57 by ajehle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,44 +17,41 @@
 /*				CONSTRUCTORS						*/
 /****************************************************/
 
-WrongAnimal::WrongAnimal(void)
+WrongAnimal::WrongAnimal(void) : type("default")
 {
-	std::cout << BLUE << "WrongAnimal " << "Constructor for " << "DEFAULT" << " called" << RESET << std::endl;
+	std::cout << "WrongAnimal " << "Constructor for " << "DEFAULT" << " called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string type) : type(type)
 {
-	std::cout << BLUE << "WrongAnimal " << "Constructor for " << this->type << " called" << RESET << std::endl;
+	std::cout << "WrongAnimal " << "Constructor for " << type << " called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &cpy)
+WrongAnimal::WrongAnimal(const WrongAnimal& cpy)
 {
-	std::cout << BLUE << "WrongAnimal " << "Copy constructor called" << RESET << std::endl;
+	std::cout << "WrongAnimal " << "Copy constructor called" << std::endl;
 	*this = cpy;
 }
 
-WrongAnimal &WrongAnimal::operator=(const WrongAnimal &cpy)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& cpy)
 {
-	std::cout << BLUE << "WrongAnimal " << " copy assignment operator called" << RESET << std::endl;
-	this->type = cpy.type;
+	std::cout << "WrongAnimal " << " copy assignment operator called" << std::endl;
+	if(this != &cpy)
+	{
+		this->type = cpy.type;
+	}
 	return (*this);
 }
 
 WrongAnimal::~WrongAnimal(void)
 {
-	std::cout << BLUE << "WrongAnimal " << "Destructor for " << this->type << " called" << RESET << std::endl;
+	std::cout << "WrongAnimal " << "Destructor for " << type << " called" << std::endl;
 }
 
 /****************************************************/
 /*				MEMBER FUNCTIONS					*/
 /****************************************************/
 
-void	WrongAnimal::makeSound(void) const
+void WrongAnimal::makeSound() const
 {
-	std::cout << YELLOW << "WrongAnimal makes sound" << RESET << std::endl;
-}
-
-std::string	WrongAnimal::getType(void) const
-{
-	return(this->type);
-}
+std::cout << GREEN << "WrongAnimal Class makes sound" << RESET << std::endl;}
